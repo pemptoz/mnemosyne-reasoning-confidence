@@ -13,45 +13,45 @@
 
 
 # =============================================================================
-# Environnements Python de data-analyse
+# Environnements Python de data-analysis
 # =============================================================================
 
-/data-analyse/venv/
-/data-analyse/.venv/
-/data-analyse/env/
-/data-analyse/.env/
+/data-analysis/venv/
+/data-analysis/.venv/
+/data-analysis/env/
+/data-analysis/.env/
 
 
 # =============================================================================
-# Fichiers temporaires Python de data-analyse
+# Fichiers temporaires Python de data-analysis
 # =============================================================================
 
-/data-analyse/**/__pycache__/
-/data-analyse/**/*.py[cod]
-/data-analyse/**/*.so
+/data-analysis/**/__pycache__/
+/data-analysis/**/*.py[cod]
+/data-analysis/**/*.so
 
-/data-analyse/.pytest_cache/
-/data-analyse/.mypy_cache/
-/data-analyse/.ruff_cache/
-/data-analyse/.coverage
-/data-analyse/htmlcov/
+/data-analysis/.pytest_cache/
+/data-analysis/.mypy_cache/
+/data-analysis/.ruff_cache/
+/data-analysis/.coverage
+/data-analysis/htmlcov/
 
 
 # =============================================================================
 # Éditeurs et système
 # =============================================================================
 
-/data-analyse/.vscode/
-/data-analyse/.idea/
+/data-analysis/.vscode/
+/data-analysis/.idea/
 
-data-analyse/.DS_Store
-data-analyse/**/.DS_Store
-data-analyse/Thumbs.db
-data-analyse/**/Thumbs.db
+data-analysis/.DS_Store
+data-analysis/**/.DS_Store
+data-analysis/Thumbs.db
+data-analysis/**/Thumbs.db
 
-/data-analyse/*~
-/data-analyse/**/*.swp
-/data-analyse/**/*.swo
+/data-analysis/*~
+/data-analysis/**/*.swp
+/data-analysis/**/*.swo
 
 
 # =============================================================================
@@ -59,10 +59,10 @@ data-analyse/**/Thumbs.db
 # =============================================================================
 
 # Installation locale de Clozure Common Lisp.
-/data-analyse/.ccl/
+/data-analysis/.ccl/
 
 # Sources Lisp locales de mReasoner.
-/data-analyse/.mreasoner/
+/data-analysis/.mreasoner/
 
 
 # =============================================================================
@@ -70,60 +70,60 @@ data-analyse/**/Thumbs.db
 # =============================================================================
 
 # Données brutes téléchargées depuis OSF ou une autre source.
-/data-analyse/data/raw/**
-!/data-analyse/data/raw/.gitkeep
-!/data-analyse/data/raw/README.md
+/data-analysis/data/raw/**
+!/data-analysis/data/raw/.gitkeep
+!/data-analysis/data/raw/README.md
 
 # Datasets produits par les scripts de conversion.
-/data-analyse/data/processed/**
-!/data-analyse/data/processed/.gitkeep
-!/data-analyse/data/processed/README.md
+/data-analysis/data/processed/**
+!/data-analysis/data/processed/.gitkeep
+!/data-analysis/data/processed/README.md
 
 # Caches de simulation.
-/data-analyse/data/cache/**
-!/data-analyse/data/cache/.gitkeep
-!/data-analyse/data/cache/README.md
+/data-analysis/data/cache/**
+!/data-analysis/data/cache/.gitkeep
+!/data-analysis/data/cache/README.md
 
 # Journaux de données éventuellement générés.
-/data-analyse/data/logs/**
-!/data-analyse/data/logs/.gitkeep
-!/data-analyse/data/logs/README.md
+/data-analysis/data/logs/**
+!/data-analysis/data/logs/.gitkeep
+!/data-analysis/data/logs/README.md
 
 
 # =============================================================================
 # Résultats générés
 # =============================================================================
 
-/data-analyse/results/logs/**
-!/data-analyse/results/logs/.gitkeep
-!/data-analyse/results/logs/README.md
+/data-analysis/results/logs/**
+!/data-analysis/results/logs/.gitkeep
+!/data-analysis/results/logs/README.md
 
-/data-analyse/results/benchmarks/**
-!/data-analyse/results/benchmarks/.gitkeep
-!/data-analyse/results/benchmarks/README.md
+/data-analysis/results/benchmarks/**
+!/data-analysis/results/benchmarks/.gitkeep
+!/data-analysis/results/benchmarks/README.md
 
-/data-analyse/results/analysis/**
-!/data-analyse/results/analysis/.gitkeep
-!/data-analyse/results/analysis/README.md
+/data-analysis/results/analysis/**
+!/data-analysis/results/analysis/.gitkeep
+!/data-analysis/results/analysis/README.md
 
-/data-analyse/results/figures/**
-!/data-analyse/results/figures/.gitkeep
-!/data-analyse/results/figures/README.md
+/data-analysis/results/figures/**
+!/data-analysis/results/figures/.gitkeep
+!/data-analysis/results/figures/README.md
 
-/data-analyse/results/tables/**
-!/data-analyse/results/tables/.gitkeep
-!/data-analyse/results/tables/README.md
+/data-analysis/results/tables/**
+!/data-analysis/results/tables/.gitkeep
+!/data-analysis/results/tables/README.md
 
 
 # =============================================================================
-# Fichiers générés accidentellement à la racine de data-analyse
+# Fichiers générés accidentellement à la racine de data-analysis
 # =============================================================================
 
-/data-analyse/dataset_ccobra_*.csv
-/data-analyse/mental_models*.csv
-/data-analyse/mental_models*.json
-/data-analyse/mreasoner_*_cache*.npz
-/data-analyse/*_log*.json
-/data-analyse/log_full*.json
-/data-analyse/full_log*.json
-/data-analyse/debug_first_trace.txt
+/data-analysis/dataset_ccobra_*.csv
+/data-analysis/mental_models*.csv
+/data-analysis/mental_models*.json
+/data-analysis/mreasoner_*_cache*.npz
+/data-analysis/*_log*.json
+/data-analysis/log_full*.json
+/data-analysis/full_log*.json
+/data-analysis/debug_first_trace.txt
