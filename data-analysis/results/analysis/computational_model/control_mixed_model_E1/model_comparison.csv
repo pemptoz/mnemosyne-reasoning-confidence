@@ -1,3 +1,0 @@
-model,formula,log_likelihood,aic,bic,number_of_estimated_parameters,likelihood_ratio_vs_null,degrees_of_freedom_difference,likelihood_ratio_p_value
-Null,confidence ~ 1,-38670.894388650064,77349.78877730013,77378.21934919507,3,0.0,0,
-Control,"confidence ~ C(condition, Treatment(reference='Neutral')) + sequence_c10",-38658.65991428691,77329.31982857382,77371.96568641624,5,24.468948726309463,2,4.859989098532324e-06

@@ -1,4 +1,0 @@
-model,formula,estimation,converged,log_likelihood,aic,bic,residual_variance
-Null ML,confidence ~ 1,ML,True,-38670.894388650064,77349.78877730013,77378.21934919507,285.41270942602375
-Control ML,"confidence ~ C(condition, Treatment(reference='Neutral')) + sequence_c10",ML,True,-38658.65991428691,77329.31982857382,77371.96568641624,284.7495380606479
-Control REML,"confidence ~ C(condition, Treatment(reference='Neutral')) + sequence_c10",REML,True,-38657.13538622028,,,284.7810132041516
