@@ -1,0 +1,142 @@
+Version Python : 3.12.3
+Version pandas : 3.0.3
+Version NumPy : 2.5.1
+Version SciPy : 1.18.0
+Version statsmodels : 0.14.6
+
+================================================================================
+CHARGEMENT DES DONNÉES
+================================================================================
+Fichier : /home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/dataset_analysis_E1.csv
+Nombre de lignes brutes : 9024
+Lignes retirées car analysis_complete=False : 0
+Lignes retirées pour valeur essentielle manquante : 0
+Nombre de lignes utilisées : 9024
+Nombre de participants : 141
+Nombre d'items : 128
+Moyenne de la séquence utilisée pour le centrage : 32.5
+Interprétation de sequence_c10 : une unité correspond à dix essais.
+Répartition des conditions par participant :
+  Standard : 71 participant(s)
+  Neutral : 70 participant(s)
+
+================================================================================
+CONSTRUCTION — MODÈLE NUL ML
+================================================================================
+Formule : confidence ~ 1
+Effet aléatoire participant : 0 + C(subject_id)
+Effet aléatoire item : 0 + C(item_id)
+
+================================================================================
+AJUSTEMENT — MODÈLE NUL ML
+================================================================================
+Optimiseur essayé : lbfgs
+Convergence : True
+Log-vraisemblance : -38670.894388650064
+Ajustement convergé avec : lbfgs
+
+================================================================================
+CONSTRUCTION — MODÈLE DE CONTRÔLE ML
+================================================================================
+Formule : confidence ~ C(condition, Treatment(reference='Neutral')) + sequence_c10
+Effet aléatoire participant : 0 + C(subject_id)
+Effet aléatoire item : 0 + C(item_id)
+
+================================================================================
+AJUSTEMENT — MODÈLE DE CONTRÔLE ML
+================================================================================
+Optimiseur essayé : lbfgs
+Convergence : True
+Log-vraisemblance : -38658.65991428691
+Ajustement convergé avec : lbfgs
+
+================================================================================
+CONSTRUCTION — MODÈLE DE CONTRÔLE REML
+================================================================================
+Formule : confidence ~ C(condition, Treatment(reference='Neutral')) + sequence_c10
+Effet aléatoire participant : 0 + C(subject_id)
+Effet aléatoire item : 0 + C(item_id)
+
+================================================================================
+AJUSTEMENT — MODÈLE DE CONTRÔLE REML
+================================================================================
+Optimiseur essayé : lbfgs
+Convergence : True
+Log-vraisemblance : -38657.13538622028
+Ajustement convergé avec : lbfgs
+
+================================================================================
+RÉSUMÉ DU MODÈLE DE CONTRÔLE REML
+================================================================================
+                               Mixed Linear Model Regression Results
+====================================================================================================
+Model:                           MixedLM               Dependent Variable:               confidence 
+No. Observations:                9024                  Method:                           REML       
+No. Groups:                      1                     Scale:                            284.7810   
+Min. group size:                 9024                  Log-Likelihood:                   -38657.1354
+Max. group size:                 9024                  Converged:                        Yes        
+Mean group size:                 9024.0                                                             
+----------------------------------------------------------------------------------------------------
+                                                          Coef.  Std.Err.   z    P>|z| [0.025 0.975]
+----------------------------------------------------------------------------------------------------
+Intercept                                                 73.146    1.748 41.849 0.000 69.721 76.572
+C(condition, Treatment(reference='Neutral'))[T.Standard]   5.146    2.464  2.089 0.037  0.317  9.974
+sequence_c10                                              -0.434    0.097 -4.487 0.000 -0.624 -0.244
+item Var                                                  11.894    0.120                           
+subject Var                                              196.394    1.439                           
+====================================================================================================
+
+
+================================================================================
+INTERPRÉTATION DES EFFETS FIXES
+================================================================================
+Effet Standard − Neutral : 5.1456 point(s) de confiance.
+Intervalle de confiance à 95 % : [0.3169, 9.9743]
+Valeur p : 0.0367444725793199
+À la séquence moyenne, les participants Standard ont une confiance estimée plus élevée que les participants Neutral.
+
+Effet de dix essais supplémentaires : -0.4340 point(s) de confiance.
+Intervalle de confiance à 95 % : [-0.6235, -0.2444]
+Valeur p : 7.228068907853634e-06
+Effet moyen par essai : -0.043396 point(s).
+Variation prédite du premier au dernier essai : -2.7339 point(s), car les essais 1 à 64 couvrent 6,3 unités de dix essais.
+
+================================================================================
+COMPARAISON ML AVEC LE MODÈLE NUL
+================================================================================
+Rapport de vraisemblance : 24.468949
+Différence de degrés de liberté : 2
+Valeur p du test de rapport de vraisemblance : 4.859989098532324e-06
+ΔAIC = AIC contrôle − AIC nul : -20.468949
+ΔBIC = BIC contrôle − BIC nul : -6.253663
+Selon l'AIC, le modèle de contrôle est préféré au modèle nul.
+Selon le BIC, le modèle de contrôle est préféré au modèle nul.
+
+================================================================================
+R² DU MODÈLE DE CONTRÔLE
+================================================================================
+Variance des effets fixes : 7.261618
+R² marginal — effets fixes seulement : 0.014514
+R² conditionnel — effets fixes et aléatoires : 0.430815
+
+================================================================================
+FICHIERS PRODUITS
+================================================================================
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/null_model_ML_summary.txt
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/control_model_ML_summary.txt
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/control_model_REML_summary.txt
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/model_comparison.csv
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/control_model_fixed_effects.csv
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/control_model_variance_components.csv
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/variance_comparison.csv
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/control_model_fit_statistics.csv
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/control_model_predictions.csv
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/condition_adjusted_means.csv
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/sequence_predictions.csv
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/control_model_residuals_vs_fitted.png
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/control_model_residual_distribution.png
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/control_model_qqplot.png
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/control_model_condition_effect.png
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/control_model_sequence_effect.png
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/control_model_variance_comparison.png
+/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/control_mixed_model_E1/control_model_results.json

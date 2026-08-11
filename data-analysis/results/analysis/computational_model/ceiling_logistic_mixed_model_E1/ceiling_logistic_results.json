@@ -1,0 +1,29 @@
+{
+    "data_file": "/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/dataset_analysis_E1.csv",
+    "output_directory": "/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/ceiling_logistic_mixed_model_E1",
+    "formula": "at_ceiling ~ C(condition, Treatment(reference='Neutral')) + sequence_c10 + subject_accuracy_z + item_entropy_z + subject_mean_models_z + models_within_subject_z",
+    "vc_formulas": {
+        "participant": "0 + C(subject_id)",
+        "item": "0 + C(item_id)"
+    },
+    "n_observations": 9024,
+    "n_subjects": 141,
+    "n_items": 128,
+    "n_at_ceiling": 2336,
+    "ceiling_rate": 0.25886524822695034,
+    "sequence_center": 32.5,
+    "priors": {
+        "fe_p": 2.0,
+        "vcp_p": 0.5
+    },
+    "optimization": {
+        "success": true,
+        "message": "Optimization terminated successfully.",
+        "iterations": 325
+    },
+    "prediction_metrics_fixed_only": {
+        "brier_score": 0.19333556815938716,
+        "log_loss": 0.5961510457385111,
+        "classification_accuracy_threshold_0_5": 0.7401374113475178
+    }
+}

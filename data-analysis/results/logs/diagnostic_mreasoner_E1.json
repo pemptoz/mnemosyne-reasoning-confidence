@@ -1,0 +1,3574 @@
+{
+  "configuration": {
+    "diagnostic_repetitions": 20,
+    "diagnostic_max_tasks": 4,
+    "ccl_path": "/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/.ccl/ccl/lx86cl64",
+    "mreasoner_dir": "/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/models/pymreasoner_2/.mreasoner/mReasoner-2587fda/",
+    "parameter_sets": {
+      "minimum": {
+        "epsilon": 0.0,
+        "lambda": 0.1,
+        "omega": 0.0,
+        "sigma": 0.0
+      },
+      "intermediate": {
+        "epsilon": 0.5,
+        "lambda": 4.05,
+        "omega": 0.5,
+        "sigma": 0.5
+      },
+      "maximum": {
+        "epsilon": 1.0,
+        "lambda": 8.0,
+        "omega": 1.0,
+        "sigma": 1.0
+      }
+    }
+  },
+  "tasks": [
+    {
+      "task_number": 1,
+      "raw_task": [
+        [
+          "All B are C"
+        ],
+        [
+          "No A are C"
+        ]
+      ],
+      "raw_choices": [
+        [
+          [
+            "Yes"
+          ],
+          [
+            "No"
+          ]
+        ]
+      ],
+      "raw_response": [
+        [
+          "No"
+        ]
+      ],
+      "normalized_premises": [
+        "All B are C",
+        "No A are C"
+      ],
+      "premise_count": 2,
+      "parameter_results": {
+        "minimum": {
+          "parameters": {
+            "epsilon": 0.0,
+            "lambda": 0.1,
+            "omega": 0.0,
+            "sigma": 0.0
+          },
+          "output_distribution": {
+            "('Eab', 'Eba')": 10,
+            "('Eba', 'Eab')": 10
+          },
+          "nvc_count": 0,
+          "valid_conclusion_count": 20,
+          "binary_distribution": {
+            "No": 0,
+            "Yes": 20
+          },
+          "raw_results": [
+            {
+              "repetition": 1,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 2,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 3,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 4,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 5,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 6,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 7,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 8,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 9,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 10,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 11,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 12,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 13,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 14,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 15,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 16,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 17,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 18,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 19,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 20,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            }
+          ],
+          "errors": []
+        },
+        "intermediate": {
+          "parameters": {
+            "epsilon": 0.5,
+            "lambda": 4.05,
+            "omega": 0.5,
+            "sigma": 0.5
+          },
+          "output_distribution": {
+            "('Eba', 'Eab')": 13,
+            "('Eab', 'Eba')": 7
+          },
+          "nvc_count": 0,
+          "valid_conclusion_count": 20,
+          "binary_distribution": {
+            "No": 0,
+            "Yes": 20
+          },
+          "raw_results": [
+            {
+              "repetition": 1,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 2,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 3,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 4,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 5,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 6,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 7,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 8,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 9,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 10,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 11,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 12,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 13,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 14,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 15,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 16,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 17,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 18,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 19,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 20,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            }
+          ],
+          "errors": []
+        },
+        "maximum": {
+          "parameters": {
+            "epsilon": 1.0,
+            "lambda": 8.0,
+            "omega": 1.0,
+            "sigma": 1.0
+          },
+          "output_distribution": {
+            "('Eab', 'Eba')": 14,
+            "('Eba', 'Eab')": 6
+          },
+          "nvc_count": 0,
+          "valid_conclusion_count": 20,
+          "binary_distribution": {
+            "No": 0,
+            "Yes": 20
+          },
+          "raw_results": [
+            {
+              "repetition": 1,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 2,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 3,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 4,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 5,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 6,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 7,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 8,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 9,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 10,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 11,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 12,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 13,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 14,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 15,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 16,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 17,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 18,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 19,
+              "raw_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "raw_prediction_repr": "['Eba', 'Eab']",
+              "canonical_prediction": [
+                "Eba",
+                "Eab"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 20,
+              "raw_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "raw_prediction_repr": "['Eab', 'Eba']",
+              "canonical_prediction": [
+                "Eab",
+                "Eba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            }
+          ],
+          "errors": []
+        }
+      },
+      "analysis": {
+        "raw_outputs_vary_between_parameters": true,
+        "binary_outputs_vary_between_parameters": false
+      }
+    },
+    {
+      "task_number": 2,
+      "raw_task": [
+        [
+          "All B are C"
+        ],
+        [
+          "All A are B"
+        ]
+      ],
+      "raw_choices": [
+        [
+          [
+            "Yes"
+          ],
+          [
+            "No"
+          ]
+        ]
+      ],
+      "raw_response": [
+        [
+          "Yes"
+        ]
+      ],
+      "normalized_premises": [
+        "All B are C",
+        "All A are B"
+      ],
+      "premise_count": 2,
+      "parameter_results": {
+        "minimum": {
+          "parameters": {
+            "epsilon": 0.0,
+            "lambda": 0.1,
+            "omega": 0.0,
+            "sigma": 0.0
+          },
+          "output_distribution": {
+            "('Aac', 'Aca')": 13,
+            "('Aca', 'Aac')": 7
+          },
+          "nvc_count": 0,
+          "valid_conclusion_count": 20,
+          "binary_distribution": {
+            "No": 0,
+            "Yes": 20
+          },
+          "raw_results": [
+            {
+              "repetition": 1,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 2,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 3,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 4,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 5,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 6,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 7,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 8,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 9,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 10,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 11,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 12,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 13,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 14,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 15,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 16,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 17,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 18,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 19,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 20,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            }
+          ],
+          "errors": []
+        },
+        "intermediate": {
+          "parameters": {
+            "epsilon": 0.5,
+            "lambda": 4.05,
+            "omega": 0.5,
+            "sigma": 0.5
+          },
+          "output_distribution": {
+            "('Aac',)": 6,
+            "('Aca', 'Aac')": 5,
+            "('Aac', 'Ica')": 6,
+            "('Aac', 'Aca')": 2,
+            "('Aac', 'NVC')": 1
+          },
+          "nvc_count": 0,
+          "valid_conclusion_count": 20,
+          "binary_distribution": {
+            "No": 0,
+            "Yes": 20
+          },
+          "raw_results": [
+            {
+              "repetition": 1,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 2,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 3,
+              "raw_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "raw_prediction_repr": "['Aac', 'Ica']",
+              "canonical_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 4,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 5,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 6,
+              "raw_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "raw_prediction_repr": "['Aac', 'Ica']",
+              "canonical_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 7,
+              "raw_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "raw_prediction_repr": "['Aac', 'Ica']",
+              "canonical_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 8,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 9,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 10,
+              "raw_prediction": [
+                "Aac",
+                "NVC"
+              ],
+              "raw_prediction_repr": "['Aac', 'NVC']",
+              "canonical_prediction": [
+                "Aac",
+                "NVC"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 11,
+              "raw_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "raw_prediction_repr": "['Aac', 'Ica']",
+              "canonical_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 12,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 13,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 14,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 15,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 16,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 17,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 18,
+              "raw_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "raw_prediction_repr": "['Aac', 'Ica']",
+              "canonical_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 19,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 20,
+              "raw_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "raw_prediction_repr": "['Aac', 'Ica']",
+              "canonical_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            }
+          ],
+          "errors": []
+        },
+        "maximum": {
+          "parameters": {
+            "epsilon": 1.0,
+            "lambda": 8.0,
+            "omega": 1.0,
+            "sigma": 1.0
+          },
+          "output_distribution": {
+            "('Aac',)": 20
+          },
+          "nvc_count": 0,
+          "valid_conclusion_count": 20,
+          "binary_distribution": {
+            "No": 0,
+            "Yes": 20
+          },
+          "raw_results": [
+            {
+              "repetition": 1,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 2,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 3,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 4,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 5,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 6,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 7,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 8,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 9,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 10,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 11,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 12,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 13,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 14,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 15,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 16,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 17,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 18,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 19,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 20,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            }
+          ],
+          "errors": []
+        }
+      },
+      "analysis": {
+        "raw_outputs_vary_between_parameters": true,
+        "binary_outputs_vary_between_parameters": false
+      }
+    },
+    {
+      "task_number": 3,
+      "raw_task": [
+        [
+          "All B are C"
+        ],
+        [
+          "All A are C"
+        ]
+      ],
+      "raw_choices": [
+        [
+          [
+            "Yes"
+          ],
+          [
+            "No"
+          ]
+        ]
+      ],
+      "raw_response": [
+        [
+          "Yes"
+        ]
+      ],
+      "normalized_premises": [
+        "All B are C",
+        "All A are C"
+      ],
+      "premise_count": 2,
+      "parameter_results": {
+        "minimum": {
+          "parameters": {
+            "epsilon": 0.0,
+            "lambda": 0.1,
+            "omega": 0.0,
+            "sigma": 0.0
+          },
+          "output_distribution": {
+            "('Aba',)": 20
+          },
+          "nvc_count": 0,
+          "valid_conclusion_count": 20,
+          "binary_distribution": {
+            "No": 0,
+            "Yes": 20
+          },
+          "raw_results": [
+            {
+              "repetition": 1,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 2,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 3,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 4,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 5,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 6,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 7,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 8,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 9,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 10,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 11,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 12,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 13,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 14,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 15,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 16,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 17,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 18,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 19,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 20,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            }
+          ],
+          "errors": []
+        },
+        "intermediate": {
+          "parameters": {
+            "epsilon": 0.5,
+            "lambda": 4.05,
+            "omega": 0.5,
+            "sigma": 0.5
+          },
+          "output_distribution": {
+            "('Aba',)": 9,
+            "('NVC',)": 11
+          },
+          "nvc_count": 11,
+          "valid_conclusion_count": 9,
+          "binary_distribution": {
+            "No": 11,
+            "Yes": 9
+          },
+          "raw_results": [
+            {
+              "repetition": 1,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 2,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 3,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 4,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 5,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 6,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 7,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 8,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 9,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 10,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 11,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 12,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 13,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 14,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 15,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 16,
+              "raw_prediction": [
+                "Aba"
+              ],
+              "raw_prediction_repr": "['Aba']",
+              "canonical_prediction": [
+                "Aba"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 17,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 18,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 19,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 20,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            }
+          ],
+          "errors": []
+        },
+        "maximum": {
+          "parameters": {
+            "epsilon": 1.0,
+            "lambda": 8.0,
+            "omega": 1.0,
+            "sigma": 1.0
+          },
+          "output_distribution": {
+            "('NVC',)": 20
+          },
+          "nvc_count": 20,
+          "valid_conclusion_count": 0,
+          "binary_distribution": {
+            "No": 20,
+            "Yes": 0
+          },
+          "raw_results": [
+            {
+              "repetition": 1,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 2,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 3,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 4,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 5,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 6,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 7,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 8,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 9,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 10,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 11,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 12,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 13,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 14,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 15,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 16,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 17,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 18,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 19,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            },
+            {
+              "repetition": 20,
+              "raw_prediction": [
+                "NVC"
+              ],
+              "raw_prediction_repr": "['NVC']",
+              "canonical_prediction": [
+                "NVC"
+              ],
+              "is_nvc": true,
+              "binary_prediction": 0
+            }
+          ],
+          "errors": []
+        }
+      },
+      "analysis": {
+        "raw_outputs_vary_between_parameters": true,
+        "binary_outputs_vary_between_parameters": true
+      }
+    },
+    {
+      "task_number": 4,
+      "raw_task": [
+        [
+          "All B are C"
+        ],
+        [
+          "All A are B"
+        ]
+      ],
+      "raw_choices": [
+        [
+          [
+            "Yes"
+          ],
+          [
+            "No"
+          ]
+        ]
+      ],
+      "raw_response": [
+        [
+          "Yes"
+        ]
+      ],
+      "normalized_premises": [
+        "All B are C",
+        "All A are B"
+      ],
+      "premise_count": 2,
+      "parameter_results": {
+        "minimum": {
+          "parameters": {
+            "epsilon": 0.0,
+            "lambda": 0.1,
+            "omega": 0.0,
+            "sigma": 0.0
+          },
+          "output_distribution": {
+            "('Aca', 'Aac')": 11,
+            "('Aac', 'Aca')": 9
+          },
+          "nvc_count": 0,
+          "valid_conclusion_count": 20,
+          "binary_distribution": {
+            "No": 0,
+            "Yes": 20
+          },
+          "raw_results": [
+            {
+              "repetition": 1,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 2,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 3,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 4,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 5,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 6,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 7,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 8,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 9,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 10,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 11,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 12,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 13,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 14,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 15,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 16,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 17,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 18,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 19,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 20,
+              "raw_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aca', 'Aac']",
+              "canonical_prediction": [
+                "Aca",
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            }
+          ],
+          "errors": []
+        },
+        "intermediate": {
+          "parameters": {
+            "epsilon": 0.5,
+            "lambda": 4.05,
+            "omega": 0.5,
+            "sigma": 0.5
+          },
+          "output_distribution": {
+            "('Aac', 'Ica')": 2,
+            "('Aac',)": 15,
+            "('Aac', 'Aca')": 2,
+            "('Aac', 'NVC')": 1
+          },
+          "nvc_count": 0,
+          "valid_conclusion_count": 20,
+          "binary_distribution": {
+            "No": 0,
+            "Yes": 20
+          },
+          "raw_results": [
+            {
+              "repetition": 1,
+              "raw_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "raw_prediction_repr": "['Aac', 'Ica']",
+              "canonical_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 2,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 3,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 4,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 5,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 6,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 7,
+              "raw_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "raw_prediction_repr": "['Aac', 'Ica']",
+              "canonical_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 8,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 9,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 10,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 11,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 12,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 13,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 14,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 15,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 16,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 17,
+              "raw_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "raw_prediction_repr": "['Aac', 'Aca']",
+              "canonical_prediction": [
+                "Aac",
+                "Aca"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 18,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 19,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 20,
+              "raw_prediction": [
+                "Aac",
+                "NVC"
+              ],
+              "raw_prediction_repr": "['Aac', 'NVC']",
+              "canonical_prediction": [
+                "Aac",
+                "NVC"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            }
+          ],
+          "errors": []
+        },
+        "maximum": {
+          "parameters": {
+            "epsilon": 1.0,
+            "lambda": 8.0,
+            "omega": 1.0,
+            "sigma": 1.0
+          },
+          "output_distribution": {
+            "('Aac',)": 18,
+            "('Aac', 'Ica')": 2
+          },
+          "nvc_count": 0,
+          "valid_conclusion_count": 20,
+          "binary_distribution": {
+            "No": 0,
+            "Yes": 20
+          },
+          "raw_results": [
+            {
+              "repetition": 1,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 2,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 3,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 4,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 5,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 6,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 7,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 8,
+              "raw_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "raw_prediction_repr": "['Aac', 'Ica']",
+              "canonical_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 9,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 10,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 11,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 12,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 13,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 14,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 15,
+              "raw_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "raw_prediction_repr": "['Aac', 'Ica']",
+              "canonical_prediction": [
+                "Aac",
+                "Ica"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 16,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 17,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 18,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 19,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            },
+            {
+              "repetition": 20,
+              "raw_prediction": [
+                "Aac"
+              ],
+              "raw_prediction_repr": "['Aac']",
+              "canonical_prediction": [
+                "Aac"
+              ],
+              "is_nvc": false,
+              "binary_prediction": 1
+            }
+          ],
+          "errors": []
+        }
+      },
+      "analysis": {
+        "raw_outputs_vary_between_parameters": true,
+        "binary_outputs_vary_between_parameters": false
+      }
+    }
+  ],
+  "global_analysis": {
+    "tested_tasks": 4,
+    "analyzed_tasks": 4,
+    "tasks_with_raw_parameter_variation": 4,
+    "tasks_with_binary_parameter_variation": 1,
+    "total_nvc_outputs": 31,
+    "total_valid_outputs": 209,
+    "distinct_outputs": [
+      "('Aac', 'Aca')",
+      "('Aac', 'Ica')",
+      "('Aac', 'NVC')",
+      "('Aac',)",
+      "('Aba',)",
+      "('Aca', 'Aac')",
+      "('Eab', 'Eba')",
+      "('Eba', 'Eab')",
+      "('NVC',)"
+    ],
+    "distinct_output_count": 9
+  }
+}

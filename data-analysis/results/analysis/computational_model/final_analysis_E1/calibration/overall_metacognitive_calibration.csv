@@ -1,0 +1,2 @@
+n_observations,mean_confidence_probability,observed_accuracy,calibration_bias_confidence_minus_accuracy,absolute_calibration_error_weighted,brier_score
+9024,0.7573747783687943,0.6231161347517731,0.13425864361702122,0.209885859929078,0.3017413896276596

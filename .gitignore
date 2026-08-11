@@ -1,92 +1,129 @@
-# ======================================================================
-# Environnements Python
-# ======================================================================
-
-venv/
-.venv/
-env/
-ENV/
-
-# ======================================================================
-# Fichiers temporaires Python
-# ======================================================================
-
-__pycache__/
-*.py[cod]
-*$py.class
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.coverage
-htmlcov/
-
-# ======================================================================
-# IDE et système
-# ======================================================================
-
-.vscode/
-.idea/
-.DS_Store
-*~
-*.swp
-
-# ======================================================================
-# Variables d'environnement et secrets
-# ======================================================================
+# =============================================================================
+# Secrets — ensemble du dépôt
+# =============================================================================
 
 .env
 .env.*
+!.env.example
+
 *.pem
 *.key
+*.p12
+*.pfx
 
-# ======================================================================
-# Dépendances externes téléchargées localement
-# ======================================================================
 
-.ccl/
-.mreasoner/
+# =============================================================================
+# Environnements Python de data-analyse
+# =============================================================================
 
-# ======================================================================
+/data-analyse/venv/
+/data-analyse/.venv/
+/data-analyse/env/
+/data-analyse/.env/
+
+
+# =============================================================================
+# Fichiers temporaires Python de data-analyse
+# =============================================================================
+
+/data-analyse/**/__pycache__/
+/data-analyse/**/*.py[cod]
+/data-analyse/**/*.so
+
+/data-analyse/.pytest_cache/
+/data-analyse/.mypy_cache/
+/data-analyse/.ruff_cache/
+/data-analyse/.coverage
+/data-analyse/htmlcov/
+
+
+# =============================================================================
+# Éditeurs et système
+# =============================================================================
+
+/data-analyse/.vscode/
+/data-analyse/.idea/
+
+data-analyse/.DS_Store
+data-analyse/**/.DS_Store
+data-analyse/Thumbs.db
+data-analyse/**/Thumbs.db
+
+/data-analyse/*~
+/data-analyse/**/*.swp
+/data-analyse/**/*.swo
+
+
+# =============================================================================
+# Dépendances externes et installations locales
+# =============================================================================
+
+# Installation locale de Clozure Common Lisp.
+/data-analyse/.ccl/
+
+# Sources Lisp locales de mReasoner.
+/data-analyse/.mreasoner/
+
+
+# =============================================================================
 # Données
-# ======================================================================
+# =============================================================================
 
-data/raw/*
-!data/raw/.gitkeep
+# Données brutes téléchargées depuis OSF ou une autre source.
+/data-analyse/data/raw/**
+!/data-analyse/data/raw/.gitkeep
+!/data-analyse/data/raw/README.md
 
-data/processed/*
-!data/processed/.gitkeep
+# Datasets produits par les scripts de conversion.
+/data-analyse/data/processed/**
+!/data-analyse/data/processed/.gitkeep
+!/data-analyse/data/processed/README.md
 
-data/cache/*
-!data/cache/.gitkeep
+# Caches de simulation.
+/data-analyse/data/cache/**
+!/data-analyse/data/cache/.gitkeep
+!/data-analyse/data/cache/README.md
 
-data/logs/*
-!data/logs/.gitkeep
+# Journaux de données éventuellement générés.
+/data-analyse/data/logs/**
+!/data-analyse/data/logs/.gitkeep
+!/data-analyse/data/logs/README.md
 
-# ======================================================================
+
+# =============================================================================
 # Résultats générés
-# ======================================================================
+# =============================================================================
 
-results/analysis/*
-!results/analysis/.gitkeep
+/data-analyse/results/logs/**
+!/data-analyse/results/logs/.gitkeep
+!/data-analyse/results/logs/README.md
 
-results/benchmarks/*
-!results/benchmarks/.gitkeep
+/data-analyse/results/benchmarks/**
+!/data-analyse/results/benchmarks/.gitkeep
+!/data-analyse/results/benchmarks/README.md
 
-results/logs/*
-!results/logs/.gitkeep
+/data-analyse/results/analysis/**
+!/data-analyse/results/analysis/.gitkeep
+!/data-analyse/results/analysis/README.md
 
-results/tables/*
-!results/tables/.gitkeep
+/data-analyse/results/figures/**
+!/data-analyse/results/figures/.gitkeep
+!/data-analyse/results/figures/README.md
 
-# ======================================================================
-# Caches post-hoc
-# ======================================================================
+/data-analyse/results/tables/**
+!/data-analyse/results/tables/.gitkeep
+!/data-analyse/results/tables/README.md
 
-mental_models_posthoc_cache*.json
 
-# ======================================================================
-# Sorties locales
-# ======================================================================
+# =============================================================================
+# Fichiers générés accidentellement à la racine de data-analyse
+# =============================================================================
 
-debug_first_trace.txt
-*.log
+/data-analyse/dataset_ccobra_*.csv
+/data-analyse/mental_models*.csv
+/data-analyse/mental_models*.json
+/data-analyse/mreasoner_*_cache*.npz
+/data-analyse/*_log*.json
+/data-analyse/log_full*.json
+/data-analyse/full_log*.json
+/data-analyse/debug_first_trace.txt

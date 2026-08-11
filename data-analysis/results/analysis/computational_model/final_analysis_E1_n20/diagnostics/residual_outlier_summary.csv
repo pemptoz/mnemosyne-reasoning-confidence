@@ -1,0 +1,2 @@
+prediction_type,n_observations,n_abs_standardized_residual_gt_2,rate_abs_standardized_residual_gt_2,n_abs_standardized_residual_gt_3,rate_abs_standardized_residual_gt_3
+conditional,9024,522,0.05784574468085106,177,0.01961436170212766

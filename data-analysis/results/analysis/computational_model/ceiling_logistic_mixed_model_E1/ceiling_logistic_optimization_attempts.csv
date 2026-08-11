@@ -1,0 +1,2 @@
+attempt,success,objective,iterations,max_absolute_gradient,message,warnings
+BFGS_scale_fe_true_gtol_1e-5,True,3032.9114565298946,325,9.507978124548983e-06,Optimization terminated successfully.,

@@ -1,0 +1,7 @@
+condition,sequence_position,sequence_c10,predicted_log_odds_fixed_only,predicted_probability_fixed_only
+Neutral,Beginning_sequence_1,-3.15,-1.9211429682665964,0.12773416471774204
+Neutral,Middle_sequence_32_5,0.0,-2.431797820817594,0.08077987030668822
+Neutral,End_sequence_64,3.15,-2.9424526733685914,0.05009443390292345
+Standard,Beginning_sequence_1,-3.15,-0.5460237581395659,0.36678741856830827
+Standard,Middle_sequence_32_5,0.0,-1.0566786106905635,0.2579446879679384
+Standard,End_sequence_64,3.15,-1.567333463241561,0.17259685995251806

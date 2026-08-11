@@ -1,0 +1,4 @@
+comparison,likelihood_ratio,degrees_of_freedom,p_value
+Control vs Cognitive_without_validity,73.09772625390906,4,5.030686065094558e-15
+Cognitive_without_validity vs Validity,1.2029759195575025,1,0.27272769813591646
+Cognitive_without_validity vs Task_type,3.8407700116804335,3,0.2791793770667811

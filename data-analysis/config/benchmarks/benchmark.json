@@ -1,0 +1,7 @@
+{
+  "type": "adaption",
+  "data.test": "data/raw/Ragni2016.csv",
+  "models": [
+    "src/models/pymreasoner_syllogistic/ccobra_mreasoner_cache.py"
+  ]
+}

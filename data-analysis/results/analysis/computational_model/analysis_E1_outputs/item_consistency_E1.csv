@@ -1,0 +1,129 @@
+item_id,nunique_condition,first_condition,nunique_task_type,first_task_type,nunique_task_formal,first_task_formal,nunique_validity,first_validity,nunique_validity_binary,first_validity_binary,nunique_believability,first_believability,nunique_conflict,first_conflict,nunique_stimulus,first_stimulus,is_consistent
+1,1,Neutral,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All African countries are clett.</p><p>The North Pole is not clett.</p>,True
+2,1,Standard,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All African countries are warm.</p><p>The North Pole is not an African country.</p>,True
+3,1,Standard,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All African countries are warm.</p><p>The North Pole is not warm.</p>,True
+4,1,Neutral,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All birds can chid.</p><p>Penguins cannot chid.</p>,True
+5,1,Standard,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All birds can fly.</p><p>Penguins cannot fly.</p>,True
+6,1,Standard,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All birds can fly.</p><p>Planes are not birds.</p>,True
+7,1,Standard,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All birds have feathers.</p><p>Parrots are birds.</p>,True
+8,1,Standard,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All birds have feathers.</p><p>Parrots have feathers.</p>,True
+9,1,Neutral,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All birds have spuckes.</p><p>Parrots have spuckes.</p>,True
+10,1,Neutral,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All broans can fly.</p><p>Planes are not broans.</p>,True
+11,1,Neutral,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All broans have feathers.</p><p>Parrots are broans.</p>,True
+12,1,Neutral,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All brubs can be used as fuel.</p><p>Trees are brubs.</p>,True
+13,1,Standard,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All citruses are sour.</p><p>Oranges are citruses.</p>,True
+14,1,Neutral,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All cycling requires mirts.</p><p>Swimming does not require mirts.</p>,True
+15,1,Standard,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All cycling requires shoes.</p><p>Swimming does not require shoes.</p>,True
+16,1,Standard,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All cycling requires shoes.</p><p>Swimming is not cycling.</p>,True
+17,1,Standard,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All dogs have snouts.</p><p>Labradors are dogs.</p>,True
+18,1,Standard,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All dogs have snouts.</p><p>Labradors have snouts.</p>,True
+19,1,Neutral,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All dogs have zems.</p><p>Labradors have zems.</p>,True
+20,1,Standard,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All fish swim.</p><p>Dolphins swim.</p>,True
+21,1,Neutral,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All fish varl.</p><p>Dolphins varl.</p>,True
+22,1,Standard,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All flowers need air.</p><p>Daisies are flowers.</p>,True
+23,1,Standard,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All flowers need air.</p><p>Daisies need air.</p>,True
+24,1,Neutral,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All flowers need grurm.</p><p>Daisies need grurm.</p>,True
+25,1,Neutral,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All flowers need vak.</p><p>Roses need vak.</p>,True
+26,1,Standard,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All flowers need water.</p><p>Roses are flowers.</p>,True
+27,1,Standard,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All flowers need water.</p><p>Roses need water.</p>,True
+28,1,Standard,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All fruits can be eaten.</p><p>Knives are not fruits.</p>,True
+29,1,Standard,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All fruits can be eaten.</p><p>Knives cannot be eaten.</p>,True
+30,1,Neutral,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All fruits can be feffed.</p><p>Knives cannot be feffed.</p>,True
+31,1,Standard,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All fuel is liquid.</p><p>Coal is fuel.</p>,True
+32,1,Standard,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All fuel is liquid.</p><p>Coal is not a liquid.</p>,True
+33,1,Neutral,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All fuel is veag.</p><p>Coal is not veag.</p>,True
+34,1,Neutral,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All gheshes have snouts.</p><p>Labradors are gheshes.</p>,True
+35,1,Standard,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All glass objects are fragile.</p><p>Sofas are not fragile.</p>,True
+36,1,Standard,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All glass objects are fragile.</p><p>Sofas are not made of glass.</p>,True
+37,1,Neutral,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All glass objects are sarky.</p><p>Sofas are not sarky.</p>,True
+38,1,Neutral,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All gnapting require equipment.</p><p>Talking is not gnapting.</p>,True
+39,1,Neutral,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All greembs grow leaves.</p><p>Pines are greembs.</p>,True
+40,1,Neutral,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All greembs have branches.</p><p>Maples are greembs.</p>,True
+41,1,Neutral,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All greembs have roots.</p><p>Oaks are greembs.</p>,True
+42,1,Neutral,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All greembs will become tall.</p><p>Bonsai are greembs.</p>,True
+43,1,Neutral,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All hirks can walk.</p><p>Whales are hirks.</p>,True
+44,1,Neutral,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All hirks have teeth.</p><p>Sharks are not hirks.</p>,True
+45,1,Neutral,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All Hult countries are cold.</p><p>Indonesia is not a Hult country.</p>,True
+46,1,Neutral,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All humans have frelns.</p><p>Amputees don't have frelns.</p>,True
+47,1,Neutral,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All humans have roalts.</p><p>Newborns have roalts.</p>,True
+48,1,Standard,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All humans have skin.</p><p>Newborns are human.</p>,True
+49,1,Standard,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All humans have skin.</p><p>Newborns have skin.</p>,True
+50,1,Standard,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All humans have two legs.</p><p>Leg amputees are human.</p>,True
+51,1,Standard,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All humans have two legs.</p><p>Leg amputees do not have two legs.</p>,True
+52,1,Neutral,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All jilms are sour.</p><p>Oranges are jilms.</p>,True
+53,1,Neutral,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All joughts are green.</p><p>Mushrooms are not joughts.</p>,True
+54,1,Neutral,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All joughts are green.</p><p>Solar panels are not joughts.</p>,True
+55,1,Neutral,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All krirks need air.</p><p>Daisies are krirks.</p>,True
+56,1,Neutral,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All krirks need water.</p><p>Roses are krirks.</p>,True
+57,1,Standard,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All lava is liquid.</p><p>Water is liquid.</p>,True
+58,1,Standard,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All lava is liquid.</p><p>Water is not lava.</p>,True
+59,1,Neutral,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All lava is rhully.</p><p>Water is rhully.</p>,True
+60,1,Standard,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All lemons are citruses.</p><p>Oranges are citruses.</p>,True
+61,1,Neutral,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All lemons are kelcks.</p><p>Oranges are kelcks.</p>,True
+62,1,Neutral,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All mammals can jaut.</p><p>Birds can jaut.</p>,True
+63,1,Standard,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All mammals can walk.</p><p>Birds can walk.</p>,True
+64,1,Standard,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All mammals can walk.</p><p>Whales are mammals.</p>,True
+65,1,Neutral,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All mammals have bribbs.</p><p>Hedgehogs don't have bribbs.</p>,True
+66,1,Standard,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All mammals have fur.</p><p>Hedgehogs don't have fur.</p>,True
+67,1,Standard,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All mammals have teeth.</p><p>Sharks are not mammals.</p>,True
+68,1,Standard,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All metal is hard to break.</p><p>Aluminum foil is not hard to break.</p>,True
+69,1,Standard,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All metal is hard to break.</p><p>Bricks are not metal.</p>,True
+70,1,Neutral,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All metal is urbes.</p><p>Aluminum foil is not urbes.</p>,True
+71,1,Neutral,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All metals are hwill.</p><p>Mercury is not hwill.</p>,True
+72,1,Standard,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All metals are solid.</p><p>Ceramic is not a metal.</p>,True
+73,1,Standard,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All metals are solid.</p><p>Mercury is not solid.</p>,True
+74,1,Neutral,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All nusks can be eaten.</p><p>Knives are not nusks.</p>,True
+75,1,Standard,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All plants are green.</p><p>Mushroom are not plants.</p>,True
+76,1,Standard,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All plants are green.</p><p>Mushrooms are not green.</p>,True
+77,1,Neutral,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All plants are slourby.</p><p>Mushrooms are not slourby.</p>,True
+78,1,Neutral,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All plants need draks.</p><p>Solar panels need draks.</p>,True
+79,1,Standard,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All plants need sunlight.</p><p>Solar panels are not plants.</p>,True
+80,1,Standard,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All plants need sunlight.</p><p>Solar panels need sunlight.</p>,True
+81,1,Standard,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All reptiles have legs.</p><p>Snakes are reptiles.</p>,True
+82,1,Standard,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All Scandinavian countries are cold.</p><p>Indonesia is not a Scandinavian country.</p>,True
+83,1,Standard,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All Scandinavian countries are cold.</p><p>Indonesia is not cold.</p>,True
+84,1,Neutral,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All Scandinavian countries are volmy.</p><p>Indonesia is not volmy.</p>,True
+85,1,Neutral,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All sherg is liquid.</p><p>Coal is sherg.</p>,True
+86,1,Neutral,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All skoges have legs.</p><p>Snakes are skoges.</p>,True
+87,1,Neutral,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All slifth is liquid.</p><p>Water is not slifth.</p>,True
+88,1,Neutral,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All smolns are hard to break.</p><p>Bricks are not smolns.</p>,True
+89,1,Neutral,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All smolns are solid.</p><p>Ceramic is not a smoln.</p>,True
+90,1,Standard,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All sports require equipment.</p><p>Talking does not require equipment.</p>,True
+91,1,Standard,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All sports require equipment.</p><p>Talking is not a sport.</p>,True
+92,1,Neutral,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All sports require gnourns.</p><p>Talking does not require gnourns.</p>,True
+93,1,Neutral,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All Strish countries are warm.</p><p>The North Pole is not a Strish country.</p>,True
+94,1,Neutral,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All suldes have skin.</p><p>Newborns are suldes.</p>,True
+95,1,Neutral,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All sweabes have two legs.</p><p>Leg amputees are sweabes.</p>,True
+96,1,Neutral,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All taizes have wheels.</p><p>Trolley suitcasees are not taizes.</p>,True
+97,1,Neutral,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All things made of metal are rondsy.</p><p>Old pennies are not rondsy.</p>,True
+98,1,Neutral,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All things made of metal kring.</p><p>Diamonds kring.</p>,True
+99,1,Standard,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All things made of metal shine.</p><p>Diamonds shine.</p>,True
+100,1,Standard,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All things made of metal shine.</p><p>Old pennies don't shine</p>,True
+101,1,Standard,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All things made of wood can be used as fuel.</p><p>Trees are made of wood.</p>,True
+102,1,Standard,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All things made of wood can be used as fuel.</p><p>Trees can be used as fuel.</p>,True
+103,1,Neutral,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All things made of wood can be zabbed.</p><p>Trees can be zabbed.</p>,True
+104,1,Neutral,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All things that are nank are bad for your health.</p><p>Salad is not nank.</p>,True
+105,1,Standard,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All things that are smoked are bad for your health.</p><p>Salad is not smoked.</p>,True
+106,1,Standard,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All things that are smoked are bad for your heath.</p><p>Salad is not bad for your health.</p>,True
+107,1,Neutral,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All things that are smoked are rorg.</p><p>Salad is not rorg.</p>,True
+108,1,Neutral,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All things that need meiv have lungs.</p><p>Dead people don't need meiv.</p>,True
+109,1,Neutral,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All things that need meiv have lungs.</p><p>Fire needs meiv.</p>,True
+110,1,Standard,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All things that need oxygen have lungs.</p><p>Dead people don't need oxygen.</p>,True
+111,1,Standard,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All things that need oxygen have lungs.</p><p>Fire needs oxygen.</p>,True
+112,1,Standard,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All trees grow leaves.</p><p>Pines are trees.</p>,True
+113,1,Standard,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All trees have branches.</p><p>Maples are trees.</p>,True
+114,1,Standard,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All trees have branches.</p><p>Maples have branches.</p>,True
+115,1,Standard,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Believable,1,No-conflict,1,<p>All trees have roots.</p><p>Oaks are trees.</p>,True
+116,1,Standard,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All trees have roots.</p><p>Oaks have roots.</p>,True
+117,1,Neutral,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All trees have smeifs.</p><p>Maples have smeifs.</p>,True
+118,1,Neutral,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All trees have snurfs.</p><p>Oaks have snurfs.</p>,True
+119,1,Neutral,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All trees will become crill.</p><p>Skyscrapers under construction will become crill.</p>,True
+120,1,Standard,1,MP,1,All B are C/All A are B,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All trees will become tall.</p><p>Bonsai are trees.</p>,True
+121,1,Standard,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All trees will become tall.</p><p>Skyscrapers under construction will become tall.</p>,True
+122,1,Neutral,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All vehicles have phrods.</p><p>Trolley suitcases have phrods.</p>,True
+123,1,Standard,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All vehicles have wheels.</p><p>Trolley suitcases are not vehicles.</p>,True
+124,1,Standard,1,AC,1,All B are C/All A are C,1,Invalid,1,0,1,Unbelievable,1,No-conflict,1,<p>All vehicles have wheels.</p><p>Trolley suitcases have wheels.</p>,True
+125,1,Standard,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All vehicles need fuel.</p><p>Bicycles do not need fuel.</p>,True
+126,1,Neutral,1,MT,1,All B are C/No A are C,1,Valid,1,1,1,Unbelievable,1,Conflict,1,<p>All vehicles need rorgs.</p><p>Bicycles do not need rorgs.</p>,True
+127,1,Neutral,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All worbl objects are fragile.</p><p>Sofas are not made of worbl.</p>,True
+128,1,Neutral,1,DA,1,All B are C/No A are B,1,Invalid,1,0,1,Believable,1,Conflict,1,<p>All yempting requires shoes.</p><p>Swimming is not yempting.</p>,True

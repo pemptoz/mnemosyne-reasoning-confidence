@@ -1,0 +1,201 @@
+
+================================================================================
+CHARGEMENT DU FICHIER EXPÉRIMENTAL
+================================================================================
+Fichier : /home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/../dataset_ccobra_E1.csv
+Nombre de lignes brutes : 9024
+Colonnes : ['id', 'sequence', 'domain', 'response_type', 'task', 'choices', 'response', 'confidence', 'is_correct', 'task_type', 'condition', 'validity', 'believability', 'conflict', 'stimulus', 'qnum', 'total_qnum', 'rt', 'logRT', 'rt_for', 'statementEval']
+Incohérences entre task_type et les prémisses : 0
+Confiances hors de [0, 100] : 0
+Lignes supprimées pour identifiant essentiel manquant : 0
+Lignes impliquées dans un doublon subject_id + sequence : 0
+Participants : 141
+Items distincts : 128
+Types de tâches : ['AC', 'DA', 'MP', 'MT']
+
+================================================================================
+CHARGEMENT DU FICHIER DE MODÈLES MENTAUX
+================================================================================
+Fichier : /home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/mental_models_count_E1_n20.csv
+Nombre de lignes brutes : 604
+Colonnes : ['subject_id', 'task', 'premise_1', 'premise_2', 'number_models_generated', 'std_models_generated', 'minimum_models_generated', 'maximum_models_generated', 'n_samples', 'n_parameter_sets_used', 'epsilon', 'lambda', 'omega', 'sigma']
+Lignes dont le type de tâche ne peut pas être déduit : 0
+Lignes impliquées dans un doublon subject_id + model_task_type : 0
+Participants dans le fichier de modèles : 151
+Nombre médian de lignes de modèles par participant : 4.0
+Nombre maximal de lignes de modèles par participant : 4
+Participants ayant moins de quatre types de tâches dans le fichier de modèles : 0
+
+================================================================================
+COHÉRENCE DES ITEMS
+================================================================================
+Items distincts : 128
+Items présentant au moins une incohérence : 0
+
+================================================================================
+CALCUL DE LA PRÉCISION PAR PARTICIPANT
+================================================================================
+Participants : 141
+Participants apparaissant dans plusieurs conditions : 0
+Précision moyenne entre participants : 0.623116
+Précision médiane entre participants : 0.5625
+
+================================================================================
+CALCUL DE L'ENTROPIE PAR ITEM
+================================================================================
+Nombre d'items avec une entropie calculable : 128
+Entropie minimale : 0.0
+Entropie médiane : 0.794102
+Entropie maximale : 0.999857
+
+================================================================================
+FUSION DES COMPTAGES MREASONER
+================================================================================
+Résultat de la fusion :
+  both : 9024
+  left_only : 0
+  right_only : 0
+Essais appariés dont les prémisses ne correspondent pas : 0
+Essais sans nombre de modèles après fusion : 0
+
+================================================================================
+DÉCOMPOSITION DU NOMBRE DE MODÈLES
+================================================================================
+Moyenne globale du nombre de modèles : 2.911968
+Moyenne des moyennes individuelles : 2.911968
+Écart-type des moyennes individuelles : 0.6024
+Participants sans variation du nombre de modèles entre leurs types de tâches : 0
+
+================================================================================
+VALEURS MANQUANTES
+================================================================================
+subject_id: 0 manquant(s) (0.000 %)
+sequence: 0 manquant(s) (0.000 %)
+item_id: 0 manquant(s) (0.000 %)
+task_type: 0 manquant(s) (0.000 %)
+condition: 0 manquant(s) (0.000 %)
+confidence: 0 manquant(s) (0.000 %)
+is_correct: 0 manquant(s) (0.000 %)
+subject_accuracy: 0 manquant(s) (0.000 %)
+response_normalized: 0 manquant(s) (0.000 %)
+validity_binary: 0 manquant(s) (0.000 %)
+item_entropy: 0 manquant(s) (0.000 %)
+item_accuracy: 0 manquant(s) (0.000 %)
+number_models_generated: 0 manquant(s) (0.000 %)
+std_models_generated: 0 manquant(s) (0.000 %)
+subject_mean_models: 0 manquant(s) (0.000 %)
+models_within_subject: 0 manquant(s) (0.000 %)
+
+================================================================================
+DISTRIBUTION DE LA CONFIANCE
+================================================================================
+Nombre de valeurs exploitables : 9024
+Moyenne : 75.737478
+Médiane : 77.0
+Écart-type : 22.299347
+Minimum : 0.0
+Maximum : 100.0
+Nombre de valeurs distinctes : 101
+Valeurs égales à 0 : 55 (0.609 %)
+Valeurs égales à 100 : 2336 (25.887 %)
+Quantiles :
+  q=0.05 : 34.0
+  q=0.10 : 50.0
+  q=0.25 : 62.0
+  q=0.50 : 77.0
+  q=0.75 : 100.0
+  q=0.90 : 100.0
+  q=0.95 : 100.0
+
+================================================================================
+STRUCTURE DU PLAN EXPÉRIMENTAL
+================================================================================
+Nombre total de lignes : 9024
+Nombre de participants : 141
+Nombre d'items : 128
+Essais par participant — minimum : 64
+Essais par participant — médiane : 64.0
+Essais par participant — maximum : 64
+Participants par item — minimum : 70
+Participants par item — médiane : 70.5
+Participants par item — maximum : 71
+Répartition des conditions :
+  Standard : 71 participant(s)
+  Neutral : 70 participant(s)
+Répartition des types de tâches :
+  MT : 2256 essai(s)
+  MP : 2256 essai(s)
+  AC : 2256 essai(s)
+  DA : 2256 essai(s)
+
+================================================================================
+RELATION ENTRE VALIDITÉ ET TYPE DE TÂCHE
+================================================================================
+validity_binary     0     1
+task_type                  
+AC               2256     0
+DA               2256     0
+MP                  0  2256
+MT                  0  2256
+La validité est-elle constante à l'intérieur de chaque task_type ? True
+ATTENTION : validité et task_type sont structurellement liés. Ils ne devront pas être introduits simultanément sans précaution dans le même modèle.
+
+================================================================================
+STABILITÉ DES SIMULATIONS MREASONER
+================================================================================
+Nombre de combinaisons participant × tâche : 564
+Nombre de simulations observé : [20]
+Écart-type moyen des simulations : 0.628917
+Écart-type médian des simulations : 0.3571
+Combinaisons avec écart-type nul : 178 (31.560 %)
+Combinaisons avec amplitude max-min >= 2 : 141 (25.000 %)
+
+================================================================================
+CORRÉLATIONS DESCRIPTIVES
+================================================================================
+                         confidence  is_correct  subject_accuracy  item_entropy  item_accuracy  item_yes_rate  number_models_generated  subject_mean_models  models_within_subject  std_models_generated  validity_binary  sequence      rt   logRT  rt_for
+confidence                   1.0000      0.0039           -0.0484       -0.1265         0.0351         0.0887                  -0.0634              -0.0649                -0.0396               -0.0439           0.0478   -0.0348 -0.0837 -0.0826 -0.0193
+is_correct                   0.0039      1.0000            0.2905       -0.3682         0.5426         0.0138                   0.0682               0.1818                -0.0103               -0.0777           0.1832   -0.0021  0.0642  0.0991 -0.0162
+subject_accuracy            -0.0484      0.2905            1.0000        0.0159         0.0086         0.0189                   0.2667               0.6259                 0.0000               -0.0028           0.0000   -0.0000  0.1545  0.2138  0.0036
+item_entropy                -0.1265     -0.3682            0.0159        1.0000        -0.6785        -0.3300                   0.1101              -0.0153                 0.1290                0.1412          -0.2068   -0.0157  0.0612  0.1187  0.0322
+item_accuracy                0.0351      0.5426            0.0086       -0.6785         1.0000         0.0255                  -0.1054              -0.0083                -0.1126               -0.1361           0.3376    0.0117 -0.0026 -0.0093 -0.0191
+item_yes_rate                0.0887      0.0138            0.0189       -0.3300         0.0255         1.0000                  -0.2631              -0.0183                -0.2823               -0.3262           0.4454   -0.0056 -0.0451 -0.0826 -0.0192
+number_models_generated     -0.0634      0.0682            0.2667        0.1101        -0.1054        -0.2631                   1.0000               0.4261                 0.9047                0.7222          -0.5072    0.0099  0.0570  0.0964  0.0102
+subject_mean_models         -0.0649      0.1818            0.6259       -0.0153        -0.0083        -0.0183                   0.4261               1.0000                -0.0000                0.0262           0.0000   -0.0000  0.0635  0.0803  0.0023
+models_within_subject       -0.0396     -0.0103            0.0000        0.1290        -0.1126        -0.2823                   0.9047              -0.0000                 1.0000                0.7859          -0.5606    0.0109  0.0330  0.0686  0.0101
+std_models_generated        -0.0439     -0.0777           -0.0028        0.1412        -0.1361        -0.3262                   0.7222               0.0262                 0.7859                1.0000          -0.6477    0.0047  0.0376  0.0807  0.0107
+validity_binary              0.0478      0.1832            0.0000       -0.2068         0.3376         0.4454                  -0.5072               0.0000                -0.5606               -0.6477           1.0000   -0.0123 -0.0257 -0.0347 -0.0009
+sequence                    -0.0348     -0.0021           -0.0000       -0.0157         0.0117        -0.0056                   0.0099              -0.0000                 0.0109                0.0047          -0.0123    1.0000 -0.0453 -0.1574 -0.0498
+rt                          -0.0837      0.0642            0.1545        0.0612        -0.0026        -0.0451                   0.0570               0.0635                 0.0330                0.0376          -0.0257   -0.0453  1.0000  0.6879  0.0920
+logRT                       -0.0826      0.0991            0.2138        0.1187        -0.0093        -0.0826                   0.0964               0.0803                 0.0686                0.0807          -0.0347   -0.1574  0.6879  1.0000  0.0846
+rt_for                      -0.0193     -0.0162            0.0036        0.0322        -0.0191        -0.0192                   0.0102               0.0023                 0.0101                0.0107          -0.0009   -0.0498  0.0920  0.0846  1.0000
+
+================================================================================
+RÉSUMÉ FINAL
+================================================================================
+Fichier analytique créé : /home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/dataset_analysis_E1_n20.csv
+Nombre de lignes finales : 9024
+Nombre de participants : 141
+Nombre d'items : 128
+Lignes complètes pour le modèle principal : 9024
+Lignes incomplètes pour le modèle principal : 0
+Pourcentage de lignes complètes : 100.000 %
+Résumé des items : /home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/analysis_E1_outputs/item_entropy_summary_E1.csv
+Résumé des participants : /home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/analysis_E1_outputs/subject_summary_E1.csv
+Diagnostic de fusion : /home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/analysis_E1_outputs/model_merge_diagnostic_E1.csv
+Corrélations descriptives : /home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/analysis_E1_outputs/predictor_correlations_E1.csv
+Contrôle des items : /home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/analysis_E1_outputs/item_consistency_E1.csv
+Structure du fichier de modèles : /home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/analysis_E1_outputs/model_count_structure_E1.csv
+
+Aperçu du fichier analytique :
+subject_id  sequence  item_id  qnum  confidence  subject_accuracy  item_entropy  number_models_generated  validity_binary  subject_mean_models  models_within_subject response response_normalized  response_binary  is_correct  item_n_rows  item_n_responses  item_n_subjects  item_yes_count  item_no_count  item_yes_rate  item_no_rate  item_accuracy task_type             task_formal condition validity believability    conflict                                                                              stimulus  std_models_generated  minimum_models_generated  maximum_models_generated  n_samples  n_parameter_sets_used  epsilon  lambda  omega  sigma  subject_n_trials  subject_n_accuracy_trials  subject_correct_count  subject_mean_confidence  subject_median_confidence  subject_std_confidence  subject_n_confidence_values  subject_zero_confidence_rate  subject_hundred_confidence_rate subject_condition  subject_median_models  subject_std_models_across_trials  subject_min_models  subject_max_models  subject_n_model_trials  subject_n_distinct_model_values     rt    logRT  rt_for  model_task_index model_merge_status  model_premises_match  analysis_complete analysis_missing_reasons      domain response_type choices  statementEval experiment_premise_1 experiment_premise_2  task_formal_normalized task_type_inferred model_task_formal_normalized model_premise_1 model_premise_2
+     63873         1      125     8        99.0          0.546875      0.988378                     2.00                1               2.2125                -0.2125       No                  No              0.0           0           71                71               71              31             40       0.436620      0.563380       0.436620        MT  All B are C/No A are C  Standard    Valid  Unbelievable    Conflict                       <p>All vehicles need fuel.</p><p>Bicycles do not need fuel.</p>                0.0000                         2                         2         20                      1      0.5    4.05    0.5    0.2                64                         64                     35                99.328125                      100.0                 3.60359                            4                           0.0                           0.9375          Standard                  2.175                          0.183008                 2.0                 2.5                      64                                4 5001.9 8.517573  3433.7                 1               both                  True               True                          conditional single-choice  Yes/No              2          All B are C           No A are C  all b are c/no a are c                 MT       all b are c/no a are c     All B are C      No A are C
+     63873         2       17     3       100.0          0.546875      0.185125                     2.15                1               2.2125                -0.0625      Yes                 Yes              1.0           1           71                71               71              69              2       0.971831      0.028169       0.971831        MP All B are C/All A are B  Standard    Valid    Believable No-conflict                                <p>All dogs have snouts.</p><p>Labradors are dogs.</p>                0.3571                         2                         3         20                      1      0.5    4.05    0.5    0.2                64                         64                     35                99.328125                      100.0                 3.60359                            4                           0.0                           0.9375          Standard                  2.175                          0.183008                 2.0                 2.5                      64                                4 4926.9 8.502465  2469.4                 2               both                  True               True                          conditional single-choice  Yes/No              8          All B are C          All A are B all b are c/all a are b                 MP      all b are c/all a are b     All B are C     All A are B
+     63873         3       49     8       100.0          0.546875      0.655444                     2.20                0               2.2125                -0.0125      Yes                 Yes              1.0           0           71                71               71              59             12       0.830986      0.169014       0.169014        AC All B are C/All A are C  Standard  Invalid    Believable    Conflict                                <p>All humans have skin.</p><p>Newborns have skin.</p>                0.4000                         2                         3         20                      1      0.5    4.05    0.5    0.2                64                         64                     35                99.328125                      100.0                 3.60359                            4                           0.0                           0.9375          Standard                  2.175                          0.183008                 2.0                 2.5                      64                                4  208.1 5.338019  4133.4                 3               both                  True               True                          conditional single-choice  Yes/No             10          All B are C          All A are C all b are c/all a are c                 AC      all b are c/all a are c     All B are C     All A are C
+     63873         4        7     7       100.0          0.546875      0.106792                     2.15                1               2.2125                -0.0625      Yes                 Yes              1.0           1           71                71               71              70              1       0.985915      0.014085       0.985915        MP All B are C/All A are B  Standard    Valid    Believable No-conflict                              <p>All birds have feathers.</p><p>Parrots are birds.</p>                0.3571                         2                         3         20                      1      0.5    4.05    0.5    0.2                64                         64                     35                99.328125                      100.0                 3.60359                            4                           0.0                           0.9375          Standard                  2.175                          0.183008                 2.0                 2.5                      64                                4 1751.2 7.468057  2200.1                 2               both                  True               True                          conditional single-choice  Yes/No              9          All B are C          All A are B all b are c/all a are b                 MP      all b are c/all a are b     All B are C     All A are B
+     63873         5      105     3        99.0          0.546875      0.857744                     2.50                0               2.2125                 0.2875      Yes                 Yes              1.0           0           71                71               71              51             20       0.718310      0.281690       0.281690        DA  All B are C/No A are B  Standard  Invalid    Believable    Conflict <p>All things that are smoked are bad for your health.</p><p>Salad is not smoked.</p>                1.5330                         2                         8         20                      1      0.5    4.05    0.5    0.2                64                         64                     35                99.328125                      100.0                 3.60359                            4                           0.0                           0.9375          Standard                  2.175                          0.183008                 2.0                 2.5                      64                                4 4714.7 8.458441  2325.1                 4               both                  True               True                          conditional single-choice  Yes/No              9          All B are C           No A are B  all b are c/no a are b                 DA       all b are c/no a are b     All B are C      No A are B
+     63873         6       73     2       100.0          0.546875      0.947707                     2.00                1               2.2125                -0.2125      Yes                 Yes              1.0           1           71                71               71              26             45       0.366197      0.633803       0.366197        MT  All B are C/No A are C  Standard    Valid  Unbelievable    Conflict                              <p>All metals are solid.</p><p>Mercury is not solid.</p>                0.0000                         2                         2         20                      1      0.5    4.05    0.5    0.2                64                         64                     35                99.328125                      100.0                 3.60359                            4                           0.0                           0.9375          Standard                  2.175                          0.183008                 2.0                 2.5                      64                                4 2476.4 7.814561  2192.2                 1               both                  True               True                          conditional single-choice  Yes/No              7          All B are C           No A are C  all b are c/no a are c                 MT       all b are c/no a are c     All B are C      No A are C
+     63873         7      120     3       100.0          0.546875      0.998712                     2.15                1               2.2125                -0.0625      Yes                 Yes              1.0           1           71                71               71              34             37       0.478873      0.521127       0.478873        MP All B are C/All A are B  Standard    Valid  Unbelievable    Conflict                            <p>All trees will become tall.</p><p>Bonsai are trees.</p>                0.3571                         2                         3         20                      1      0.5    4.05    0.5    0.2                64                         64                     35                99.328125                      100.0                 3.60359                            4                           0.0                           0.9375          Standard                  2.175                          0.183008                 2.0                 2.5                      64                                4 1432.9 7.267456  2411.4                 2               both                  True               True                          conditional single-choice  Yes/No              9          All B are C          All A are B all b are c/all a are b                 MP      all b are c/all a are b     All B are C     All A are B
+     63873         8        6     4       100.0          0.546875      0.464515                     2.50                0               2.2125                 0.2875       No                  No              0.0           1           71                71               71               7             64       0.098592      0.901408       0.901408        DA  All B are C/No A are B  Standard  Invalid  Unbelievable No-conflict                                 <p>All birds can fly.</p><p>Planes are not birds.</p>                1.5330                         2                         8         20                      1      0.5    4.05    0.5    0.2                64                         64                     35                99.328125                      100.0                 3.60359                            4                           0.0                           0.9375          Standard                  2.175                          0.183008                 2.0                 2.5                      64                                4 8750.2 9.076832  1882.7                 4               both                  True               True                          conditional single-choice  Yes/No              0          All B are C           No A are B  all b are c/no a are b                 DA       all b are c/no a are b     All B are C      No A are B
+     63873         9       60     6       100.0          0.546875      0.548487                     2.20                0               2.2125                -0.0125       No                  No              0.0           1           71                71               71               9             62       0.126761      0.873239       0.873239        AC All B are C/All A are C  Standard  Invalid  Unbelievable No-conflict                           <p>All lemons are citruses.</p><p>Oranges are citruses.</p>                0.4000                         2                         3         20                      1      0.5    4.05    0.5    0.2                64                         64                     35                99.328125                      100.0                 3.60359                            4                           0.0                           0.9375          Standard                  2.175                          0.183008                 2.0                 2.5                      64                                4 1934.0 7.567346  2676.7                 3               both                  True               True                          conditional single-choice  Yes/No              0          All B are C          All A are C all b are c/all a are c                 AC      all b are c/all a are c     All B are C     All A are C
+     63873        10       35     8       100.0          0.546875      0.464515                     2.00                1               2.2125                -0.2125      Yes                 Yes              1.0           1           71                71               71              64              7       0.901408      0.098592       0.901408        MT  All B are C/No A are C  Standard    Valid    Believable No-conflict                    <p>All glass objects are fragile.</p><p>Sofas are not fragile.</p>                0.0000                         2                         2         20                      1      0.5    4.05    0.5    0.2                64                         64                     35                99.328125                      100.0                 3.60359                            4                           0.0                           0.9375          Standard                  2.175                          0.183008                 2.0                 2.5                      64                                4 1719.1 7.449556  1715.1                 1               both                  True               True                          conditional single-choice  Yes/No              7          All B are C           No A are C  all b are c/no a are c                 MT       all b are c/no a are c     All B are C      No A are C

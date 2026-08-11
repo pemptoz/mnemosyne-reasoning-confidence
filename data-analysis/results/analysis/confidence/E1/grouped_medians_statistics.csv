@@ -1,0 +1,4 @@
+group,number_of_subjects,median_confidence,median_accuracy,mean_models
+"< 2,6 modèles",57,74.875,53.125,2.2324228070175436
+"2,6 à < 3 modèles",22,75.8906,53.90625,2.6666000000000007
+≥ 3 modèles,62,71.0469,74.21875,3.193577419354838

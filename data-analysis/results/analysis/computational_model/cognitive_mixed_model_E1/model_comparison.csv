@@ -1,0 +1,4 @@
+model,formula,converged,log_likelihood,aic,bic,number_of_estimated_parameters,n_observations,residual_variance
+Null,confidence ~ 1,True,-38670.89438865008,77349.78877730016,77378.2193491951,3,9024,285.41270942602375
+Control,"confidence ~ C(condition, Treatment(reference='Neutral')) + sequence_c10",True,-38658.65991428691,77329.31982857382,77371.96568641624,5,9024,284.7495380606478
+Cognitive,"confidence ~ C(condition, Treatment(reference='Neutral')) + sequence_c10 + subject_accuracy_z + item_entropy_z + subject_mean_models_z + models_within_subject_z + validity_binary",True,-38621.509563200176,77265.01912640035,77343.20319911146,10,9024,284.69562846585654

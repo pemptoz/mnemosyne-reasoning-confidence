@@ -1,0 +1,23 @@
+{
+  "input_file": "/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/dataset_analysis_E1.csv",
+  "n_observations": 9024,
+  "n_subjects": 141,
+  "n_items": 128,
+  "estimation_primary": "REML",
+  "converged": true,
+  "intercept": 75.73638539153357,
+  "subject_variance": 200.93019639453854,
+  "item_variance": 11.874523130868583,
+  "residual_variance": 285.41232923486825,
+  "total_variance": 498.21704876027536,
+  "subject_icc": 0.40329851596712246,
+  "item_icc": 0.023834036110197805,
+  "residual_proportion": 0.5728674479226797,
+  "total_cluster_icc": 0.4271325520773203,
+  "conditional_rmse_descriptive": 16.77927012905288,
+  "conditional_mae_descriptive": 11.44102053422769,
+  "reml_log_likelihood": -38669.75812326601,
+  "ml_log_likelihood": -38670.89438865008,
+  "ml_aic": 77349.78877730016,
+  "ml_bic": 77378.2193491951
+}

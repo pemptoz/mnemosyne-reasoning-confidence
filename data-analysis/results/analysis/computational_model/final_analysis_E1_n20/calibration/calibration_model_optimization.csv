@@ -1,0 +1,2 @@
+attempt,success,objective,iterations,maximum_absolute_gradient,message,warnings
+1,True,4555.601380396224,171,8.19978734642457e-06,Optimization terminated successfully.,

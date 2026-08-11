@@ -1,0 +1,46 @@
+{
+    "data_file": "/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/dataset_analysis_E1_n20.csv",
+    "output_directory": "/home/paul/Etudes/Annee_4/TSP/INRIA/cogsci-individualization/paul-benchmark/computational_model/cognitive_mixed_model_E1_n20",
+    "n_observations": 9024,
+    "n_subjects": 141,
+    "n_items": 128,
+    "sequence_center": 32.5,
+    "formulas": {
+        "null": "confidence ~ 1",
+        "control": "confidence ~ C(condition, Treatment(reference='Neutral')) + sequence_c10",
+        "cognitive": "confidence ~ C(condition, Treatment(reference='Neutral')) + sequence_c10 + subject_accuracy_z + item_entropy_z + subject_mean_models_z + models_within_subject_z + validity_binary"
+    },
+    "optimizers": {
+        "null_ml": "lbfgs",
+        "control_ml": "lbfgs",
+        "cognitive_ml": "lbfgs",
+        "cognitive_reml": "lbfgs"
+    },
+    "convergence": {
+        "null_ml": true,
+        "control_ml": true,
+        "cognitive_ml": true,
+        "cognitive_reml": true
+    },
+    "likelihood_ratio_tests": {
+        "null_vs_control": {
+            "likelihood_ratio": 24.468948726338567,
+            "degrees_of_freedom": 2.0,
+            "p_value": 4.859989098461606e-06
+        },
+        "control_vs_cognitive": {
+            "likelihood_ratio": 74.40520276094321,
+            "degrees_of_freedom": 5.0,
+            "p_value": 1.2380248369738285e-14
+        },
+        "null_vs_cognitive": {
+            "likelihood_ratio": 98.87415148728178,
+            "degrees_of_freedom": 7.0,
+            "p_value": 1.8423469313393437e-18
+        }
+    },
+    "prediction_metrics_fixed_only": {
+        "rmse": 21.90382344026014,
+        "mae": 17.908299813047844
+    }
+}

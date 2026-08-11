@@ -1,0 +1,3 @@
+estimation,converged,n_observations,n_subjects,n_items,log_likelihood,aic,bic,residual_variance
+REML,True,9024,141,128,-38669.75812326601,,,285.41232923486825
+ML,True,9024,141,128,-38670.89438865008,77349.78877730016,77378.2193491951,285.41270942602375

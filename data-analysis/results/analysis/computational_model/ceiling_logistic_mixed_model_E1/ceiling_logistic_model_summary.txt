@@ -1,0 +1,39 @@
+                                      Binomial Mixed GLM Results
+=======================================================================================================
+                                                         Type Post. Mean Post. SD   SD  SD (LB) SD (UB)
+-------------------------------------------------------------------------------------------------------
+Intercept                                                   M    -2.4318   0.0348                      
+C(condition, Treatment(reference='Neutral'))[T.Standard]    M     1.3751   0.0697                      
+sequence_c10                                                M    -0.1621   0.0189                      
+subject_accuracy_z                                          M    -0.1842   0.0383                      
+item_entropy_z                                              M    -0.3010   0.0339                      
+subject_mean_models_z                                       M     0.1531   0.0350                      
+models_within_subject_z                                     M    -0.0837   0.0346                      
+participant                                                 V     1.0946   0.0582 2.988   2.659   3.357
+item                                                        V    -1.1274   0.0631 0.324   0.285   0.367
+=======================================================================================================
+Parameter types are mean structure (M) and variance structure (V)
+Variance parameters are modeled as log standard deviations
+
+Tentative retenue :
+BFGS_scale_fe_true_gtol_1e-5
+
+Optimisation :
+  message: Optimization terminated successfully.
+  success: True
+   status: 0
+      fun: 3032.9114565298946
+        x: [-2.432e+00  1.375e+00 ... -1.337e+00 -1.423e+00]
+      nit: 325
+      jac: [ 3.084e-06  1.282e-06 ...  2.526e-08  1.992e-08]
+ hess_inv: [[ 7.405e-02 -5.385e-04 ... -1.744e-03 -8.805e-04]
+            [-5.385e-04  3.252e-02 ...  5.258e-04  1.886e-04]
+            ...
+            [-1.744e-03  5.258e-04 ...  1.002e+00  5.748e-03]
+            [-8.805e-04  1.886e-04 ...  5.748e-03  1.001e+00]]
+     nfev: 370
+     njev: 370
+
+Toutes les tentatives :
+                     attempt  success   objective  iterations  max_absolute_gradient                               message warnings
+BFGS_scale_fe_true_gtol_1e-5     True 3032.911457         325                0.00001 Optimization terminated successfully.         

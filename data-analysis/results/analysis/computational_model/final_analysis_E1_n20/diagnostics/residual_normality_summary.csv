@@ -1,0 +1,2 @@
+variable,n,mean,standard_deviation,skewness,excess_kurtosis,shapiro_sample_n,shapiro_statistic,shapiro_p_value
+conditional_residuals,9024,4.274752340914876e-14,16.677843034264487,-1.4298196713335773,4.397859160146946,5000,0.8995416994421603,2.749768271208651e-49

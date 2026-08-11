@@ -1,0 +1,4 @@
+comparison,likelihood_ratio,degrees_of_freedom,p_value
+Null vs Control,24.468948726338567,2,4.859989098461606e-06
+Control vs Cognitive,74.30070217346656,5,1.3017574651224123e-14
+Null vs Cognitive,98.76965089980513,7,1.9361488754527525e-18
