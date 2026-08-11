@@ -94,27 +94,6 @@ class MReasoner():
         # Initialize logger instance
         self.logger = logging.getLogger(__name__)
 
-        if mreas_path is None:
-            script_directory = os.path.dirname(
-                os.path.abspath(__file__)
-            )
-
-            base_directory = os.path.abspath(
-                os.path.join(
-                    script_directory,
-                    "..",
-                    "..",
-                    "..",
-                    "..",
-                )
-            )
-
-            mreas_path = os.path.join(
-                base_directory,
-                ".mreasoner",
-            )
-
-
         # Store member variables
         self.ccl_path = ccl_path
         self.mreasoner_dir = mreasoner_dir

@@ -13,17 +13,27 @@ réponses individuelles.
 Ce projet utilise et adapte le package
 [pymreasoner](https://github.com/nriesterer/pymreasoner), qui fournit
 une interface Python vers le modèle cognitif [mReasoner](https://github.com/skhemlani/mReasoner) exécuté avec
-Clozure Common Lisp.
+Clozure Common Lisp. 
 
-Dans ce dépôt :
+## Clozure Common Lisp et mReasoner
 
-- `mreasoner/` contient l'interface Python commune vers mReasoner ;
-- `.ccl/` contient ou reçoit l'installation de Clozure Common Lisp ;
-- `.mreasoner/` contient ou reçoit les sources Lisp de mReasoner ;
-- `src/models/pymreasoner_syllogistic/` contient le modèle utilisé avec
-  les syllogismes de `Ragni2016.csv` ;
-- `src/models/pymreasoner_conditional/` contient les modèles utilisés
-  avec les expériences E1 et E2.
+Ce projet utilise **pymreasoner**, une interface Python pour le modèle
+cognitif **mReasoner**. mReasoner s’exécute avec
+[Clozure Common Lisp](https://ccl.clozure.com/).
+
+Les répertoires suivants ne sont pas versionnés dans Git :
+
+```text
+data-analyse/.ccl/
+data-analyse/.mreasoner/
+```
+
+Pour créer ces dossiers,, commencez par exécuter : 
+
+```python
+python3 -m pip install -r requirements.txt
+python3 initialization_mreasoner.py
+```
 
 ## 2. Sources des données
 
@@ -31,7 +41,7 @@ Dans ce dépôt :
 
 Le fichier `data/raw/Ragni2016.csv` est utilisé pour les analyses de consensus et d'entropie. Il contient des réponses humaines à des syllogismes catégoriques.
 
-Nous utilisons le jeu de données « Ragni2016 » (Riesterer et al., 2020), obtenu via le framework CCOBRA (CognitiveComputationLab, s.d.), issu d’une expérience en ligne menée en 2016 au Cognitive Computation Lab de l’Université de Freiburg sous la direction de Marco Ragni : [CognitiveComputationLab](!https://github.com/CognitiveComputationLab/ccobra/blob/master/benchmarks/syllogistic/data/Ragni2016.csv)
+Nous utilisons le jeu de données « Ragni2016, obtenu via le framework CCOBRA (CognitiveComputationLab, s.d.), issu d’une expérience en ligne menée en 2016 au Cognitive Computation Lab de l’Université de Freiburg sous la direction de Marco Ragni : [CognitiveComputationLab](!https://github.com/CognitiveComputationLab/ccobra/blob/master/benchmarks/syllogistic/data/Ragni2016.csv)
 
 
 ### Expériences E1 et E2
