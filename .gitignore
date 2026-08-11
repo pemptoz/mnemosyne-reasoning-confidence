@@ -69,20 +69,11 @@ data-analysis/**/Thumbs.db
 # Données
 # =============================================================================
 
-# Données brutes téléchargées depuis OSF ou une autre source.
-/data-analysis/data/raw/**
-!/data-analysis/data/raw/.gitkeep
-!/data-analysis/data/raw/README.md
-
 # Datasets produits par les scripts de conversion.
 /data-analysis/data/processed/**
 !/data-analysis/data/processed/.gitkeep
 !/data-analysis/data/processed/README.md
 
-# Caches de simulation.
-/data-analysis/data/cache/**
-!/data-analysis/data/cache/.gitkeep
-!/data-analysis/data/cache/README.md
 
 # Journaux de données éventuellement générés.
 /data-analysis/data/logs/**
@@ -115,15 +106,4 @@ data-analysis/**/Thumbs.db
 !/data-analysis/results/tables/README.md
 
 
-# =============================================================================
-# Fichiers générés accidentellement à la racine de data-analysis
-# =============================================================================
 
-/data-analysis/dataset_ccobra_*.csv
-/data-analysis/mental_models*.csv
-/data-analysis/mental_models*.json
-/data-analysis/mreasoner_*_cache*.npz
-/data-analysis/*_log*.json
-/data-analysis/log_full*.json
-/data-analysis/full_log*.json
-/data-analysis/debug_first_trace.txt
