@@ -14,9 +14,28 @@ import seaborn as sns
 # CONFIGURATION
 # ======================================================================
 
-BASE_DIR = os.path.dirname(
-    os.path.abspath('../../../..')
+# ======================================================================
+# CONFIGURATION
+# ======================================================================
+
+# Répertoire du script :
+# <racine>/src/analysis/confidence/E1/
+SCRIPT_DIR = os.path.dirname(
+    os.path.abspath(__file__)
 )
+
+# Racine du projet :
+# <racine>/data-analysis/
+BASE_DIR = os.path.abspath(
+    os.path.join(
+        SCRIPT_DIR,
+        "..",
+        "..",
+        "..",
+        "..",
+    )
+)
+
 
 # Fichier contenant le nombre de modèles par participant et par tâche
 MODELS_FILE = os.path.join(

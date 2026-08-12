@@ -13,12 +13,28 @@ from pathlib import Path
 # Chemins
 # ======================================================================
 
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
+# ======================================================================
+# Chemins
+# ======================================================================
 
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+PROJECT_ROOT = Path(
+    __file__
+).resolve().parents[2]
+
+MODELS_DIR = (
+    PROJECT_ROOT
+    / "src"
+    / "models"
+)
+
+if str(MODELS_DIR) not in sys.path:
+    sys.path.insert(
+        0,
+        str(MODELS_DIR),
+    )
 
 import mreasoner
+
 
 
 CCL_EXECUTABLE = str(
@@ -44,7 +60,7 @@ PREDICTION_CACHE_FILE = str(
     PROJECT_ROOT
     / "data"
     / "cache"
-    / "pymreasoner_2"
+    / "pymreasoner_conditional"
     / "mreasoner_conditional_cache_E1.npz"
 )
 

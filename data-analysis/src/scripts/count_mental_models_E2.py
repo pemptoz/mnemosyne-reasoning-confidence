@@ -51,30 +51,21 @@ from pathlib import Path
 # ======================================================================
 # CONFIGURATION
 # ======================================================================
+PROJECT_ROOT = Path(
+    __file__
+).resolve().parents[2]
 
-BASE_DIR = os.path.dirname(
-    os.path.abspath(__file__)
+MODELS_DIR = (
+    PROJECT_ROOT
+    / "src"
+    / "models"
 )
 
-MODEL_DIR = os.path.join(
-    BASE_DIR,
-    "models",
-    "pymreasoner_2",
-)
-
-if MODEL_DIR not in sys.path:
+if str(MODELS_DIR) not in sys.path:
     sys.path.insert(
         0,
-        MODEL_DIR,
+        str(MODELS_DIR),
     )
-
-import mreasoner
-
-
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
 
 import mreasoner
 
