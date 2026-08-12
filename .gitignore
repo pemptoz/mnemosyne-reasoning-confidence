@@ -105,5 +105,5 @@ data-analysis/**/Thumbs.db
 !/data-analysis/results/tables/.gitkeep
 !/data-analysis/results/tables/README.md
 
-
-
+/data-analysis/src/analysis/computational_model/**
+/data-analysis/README.md
