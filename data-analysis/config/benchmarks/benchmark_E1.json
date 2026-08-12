@@ -1,9 +1,9 @@
 {
   "type": "coverage",
-  "data.test": "data/processed/dataset_ccobra_E1.csv",
+  "data.test": "../../data/processed/dataset_ccobra_E1.csv",
   "models": [
     {
-      "filename": "src/models/pymreasoner_conditional/ccobra_mreasoner_E1.py",
+      "filename": "../../src/models/pymreasoner_conditional/ccobra_mreasoner_E1.py",
       "override_name": "mReasoner",
       "args": {
         "fit_its": 11,
@@ -12,7 +12,7 @@
         "log_file": "results/logs/full_log_E1.json",
         "random_tie_break": false,
         "random_seed": 42
-        }
+      }
     }
   ]
 }

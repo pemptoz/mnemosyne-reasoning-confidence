@@ -1,9 +1,9 @@
 {
   "type": "coverage",
-  "data.test": "data/processed/dataset_ccobra_E2_int.csv",
+  "data.test": "../../data/processed/dataset_ccobra_E2_int.csv",
   "models": [
     {
-      "filename": "src/models/pymreasoner_conditional/ccobra_mreasoner_E2_intuitive_fixed_system1.py",
+      "filename": "../../src/models/pymreasoner_conditional/ccobra_mreasoner_E2_intuitive_fixed_system1.py",
       "override_name": "mReasoner",
       "args": {
         "fit_its": 11,

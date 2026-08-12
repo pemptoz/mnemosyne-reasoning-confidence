@@ -1,14 +1,14 @@
 {
   "type": "coverage",
-  "data.test": "data/processed/dataset_ccobra_E2_ref.csv",
+  "data.test": "../../data/processed/dataset_ccobra_E2_ref.csv",
   "models": [
     {
-      "filename": "src/models/pymreasoner_conditional/ccobra_mreasoner_E2.py",
+      "filename": "../../src/models/pymreasoner_conditional/ccobra_mreasoner_E2.py",
       "override_name": "mReasoner",
       "args": {
         "fit_its": 11,
         "n_samples": 5,
-        "cache_file": "data/cache/pymreasoner_2/mreasoner_conditional_cache_E2.npz",
+        "cache_file": "data/cache/pymreasoner_conditional/mreasoner_conditional_cache_E2.npz",
         "log_file": "results/logs/log_full_E2_ref.json",
         "random_tie_break": false,
         "random_seed": 42

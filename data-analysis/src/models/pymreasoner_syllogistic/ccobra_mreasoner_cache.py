@@ -47,7 +47,7 @@ DEFAULT_CACHE_FILE = os.path.join(
     BASE_DIR,
     "data",
     "cache",
-    "pymreasoner",
+    "pymreasoner_syllogistic",
     "2020-09-09-cache-11-10.npy",
 )
 
@@ -68,7 +68,7 @@ class CCobraMReasoner(ccobra.CCobraModel):
         self.pre_train_data = np.zeros((64, 9))
         self.history = np.zeros((64, 9))    
 
-        # Cache par défaut stocké dans data/cache/pymreasoner/.
+        # Cache par défaut stocké dans data/cache/pymreasoner_syllogistic/.
         if cache_file is None:
             cache_file = DEFAULT_CACHE_FILE
 

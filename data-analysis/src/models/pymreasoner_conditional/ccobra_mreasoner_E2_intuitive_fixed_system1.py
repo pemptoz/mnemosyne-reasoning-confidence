@@ -12,15 +12,43 @@ import ccobra
 import numpy as np
 
 
-PROJECT_ROOT = Path(__file__).resolve().parents[3]
+SCRIPT_DIR = Path(__file__).resolve().parent
 
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+# .../data-analysis/src/models
+MODELS_DIR = SCRIPT_DIR.parent
+
+# .../data-analysis
+PROJECT_ROOT = MODELS_DIR.parent.parent
+
+# Permet d'importer :
+# .../data-analysis/src/models/mreasoner/
+if str(MODELS_DIR) not in sys.path:
+    sys.path.insert(
+        0,
+        str(MODELS_DIR),
+    )
 
 import mreasoner
 
+def resolve_project_path(path_value):
+        """
+        Résout un chemin par rapport à la racine du projet.
 
-import mreasoner
+        Les chemins absolus sont conservés.
+        Les chemins relatifs sont interprétés depuis PROJECT_ROOT.
+        """
+        path = Path(
+            os.path.expanduser(
+                str(path_value)
+            )
+        )
+
+        if not path.is_absolute():
+            path = PROJECT_ROOT / path
+
+        return str(
+            path.resolve()
+        )
 
 
 class CCobraMReasoner(ccobra.CCobraModel):
@@ -103,12 +131,12 @@ class CCobraMReasoner(ccobra.CCobraModel):
                 "n_samples doit être supérieur ou égal à 1."
             )
 
-        self.cache_file = os.path.abspath(
-            os.path.expanduser(cache_file)
+        self.cache_file = resolve_project_path(
+            cache_file
         )
 
-        self.log_file = os.path.abspath(
-            os.path.expanduser(log_file)
+        self.log_file = resolve_project_path(
+            log_file
         )
 
         self.random_tie_break = bool(

@@ -10,6 +10,8 @@ import numpy as np
 import ccobra
 import tqdm
 
+import os
+
 
 MODELS_DIR = Path(__file__).resolve().parent.parent
 
