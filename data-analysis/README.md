@@ -1,5 +1,20 @@
 # Analyse des modèles de raisonnement avec mReasoner
 
+## Sommaire
+
+1. [Logiciels et projets utilisés](#1-logiciels-et-projets-utilisés)
+2. [Sources des données](#2-sources-des-données)
+3. [Organisation du dépôt](#3-organisation-du-dépôt)
+4. [Installation](#4-installation)
+5. [Conversion des données E1 et E2](#5-conversion-des-données-e1-et-e2)
+6. [Benchmarks CCOBRA](#6-benchmarks-ccobra)
+7. [Comptage post-hoc des modèles mentaux](#7-Comptage-post-hoc-des-modèles-mentaux)
+8. [Analyse de consensus](#8-analyse-de-consensus)
+9. [Analyse d'entropie](#9-analyse-dentropie)
+10. [Analyse de confiance](#10-analyse-de-confiance)
+11. [Analyses computationnelles](#11-analyses-computationnelles)
+
+
 ## 1. Logiciels et projets utilisés
 
 ### CCOBRA
@@ -26,13 +41,6 @@ Les répertoires suivants ne sont pas versionnés dans Git :
 ```text
 data-analyse/.ccl/
 data-analyse/.mreasoner/
-```
-
-Pour créer ces dossiers,, commencez par exécuter : 
-
-```python
-python3 -m pip install -r requirements.txt
-python3 initialization_mreasoner.py
 ```
 
 ## 2. Sources des données
@@ -74,6 +82,12 @@ datasets E2, correspondant aux phases intuitive et réfléchie.
 ├── mreasoner/                  # Interface Python commune vers mReasoner
 ├── results/
 │   ├── analysis/               # Figures produites
+│   │   ├── confidence/
+│   │   │   ├── E1/
+│   │   │   ├── E2/
+│   │   ├── consensus/
+│   │   ├── entropy/ 
+│   │   └──  computational_model/
 │   ├── benchmarks/             # Sorties des benchmarks
 │   ├── logs/                   # Paramètres ajustés par participant
 │   └── tables/                 # Résultats tabulaires
@@ -81,7 +95,9 @@ datasets E2, correspondant aux phases intuitive et réfléchie.
     ├── analysis/
     │   ├── confidence/         # Analyses de confiance E1 et E2
     │   ├── consensus/          # Analyses de consensus
-    │   └── entropy/            # Analyses d'entropie
+    │   ├── entropy/ 
+    │   └── computational_models/       # Analyses d'entropie
+    │       └── archive
     ├── models/
     │   ├── pymreasoner_conditional/
     │   └── pymreasoner_syllogistic/
@@ -116,19 +132,8 @@ Les dépendances principales sont notamment :
 Elles peuvent être installées avec :
 
 ```bash
-python3 -m pip install \
-    ccobra \
-    numpy \
-    pandas \
-    scipy \
-    scikit-learn \
-    matplotlib \
-    seaborn \
-    tqdm
+python3 -m pip install -r requirements.txt
 ```
-
-Il est recommandé de conserver les versions exactes utilisées dans un
-fichier `requirements.txt`.
 
 ### Vérification de Clozure Common Lisp
 
@@ -143,6 +148,11 @@ Les sources Lisp de mReasoner sont placées dans :
 
 ```text
 .mreasoner/
+```
+Executez : 
+
+```bash
+python3 tools/initialization_mreasoner.py
 ```
 
 ## 5. Conversion des données E1 et E2
@@ -219,7 +229,7 @@ Les variables de confiance et de temps de réponse sont conservées même
 lorsqu'elles sont manquantes. Un essai n'est supprimé que si une
 information essentielle à l'ajustement est absente.
 
-## 7. Benchmarks CCOBRA
+## 6. Benchmarks CCOBRA
 
 Les fichiers de configuration se trouvent dans :
 
@@ -339,7 +349,7 @@ results/logs/log_full_E2_int_fixed_system1.json
 Cette variante doit utiliser un cache distinct du benchmark intuitif
 standard, afin d'éviter toute ambiguïté entre les deux configurations.
 
-## 8. Comptage post-hoc des modèles mentaux
+## 7. Comptage post-hoc des modèles mentaux
 
 Les scripts de comptage relisent les paramètres ajustés par CCOBRA,
 interrogent mReasoner avec `query_trace()` et comptent les occurrences
@@ -403,7 +413,7 @@ Ce script utilise les paramètres de la variante intuitive fixée et les
 compare aux paramètres réfléchis.
 
 
-## 9. Analyse de consensus
+## 8. Analyse de consensus
 
 Les scripts de consensus se trouvent dans :
 
@@ -434,7 +444,7 @@ Les figures sont enregistrées dans :
 results/analysis/consensus/
 ```
 
-## 10. Analyse d'entropie
+## 9. Analyse d'entropie
 
 Les scripts se trouvent dans :
 
@@ -461,7 +471,7 @@ Les figures sont enregistrées dans :
 results/analysis/entropy/
 ```
 
-## 11. Analyse de confiance
+## 10. Analyse de confiance
 
 ### E1
 
@@ -531,6 +541,18 @@ python3 src/analysis/confidence/E2/plot_quadrant.py
 
 La phase réfléchie peut être réutilisée si son journal existe déjà.
 
+## 11. Analyses computationnelles
+
+Elle comprend notamment :
+
+- la construction d'un dataset analytique ;
+- des modèles linéaires mixtes ;
+- des analyses de sensibilité ;
+- une analyse spécifique de l'utilisation de la confiance maximale.
+
+La documentation détaillée de cette partie est disponible dans :
+
+[`src/analysis/computational_models/README.md`](src/analysis/computational_model/README.md)
 
 
 

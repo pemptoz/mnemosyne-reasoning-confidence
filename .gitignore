@@ -105,5 +105,5 @@ data-analysis/**/Thumbs.db
 !/data-analysis/results/tables/.gitkeep
 !/data-analysis/results/tables/README.md
 
-/data-analysis/src/analysis/computational_model/**
-/data-analysis/README.md
+/data-analysis/src/analysis/computational_model/fit_gam**
+/data-analysis/src/analysis/computational_model/prepare_gam_data_E1_n20.py
