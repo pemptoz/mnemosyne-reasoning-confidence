@@ -136,11 +136,6 @@ smooth_plot_file <- file.path(
     "gamm_exploratory_smooth_effects.png"
 )
 
-diagnostic_plot_file <- file.path(
-    output_dir,
-    "gamm_exploratory_diagnostics.png"
-)
-
 k_check_file <- file.path(
     output_dir,
     "gamm_exploratory_k_check.csv"
@@ -860,39 +855,6 @@ cat(
     "\n"
 )
 
-# ============================================================================
-# DIAGNOSTICS DES RÉSIDUS
-# ============================================================================
-
-section(
-    "DIAGNOSTICS DU MODÈLE"
-)
-
-png(
-    filename = diagnostic_plot_file,
-    width = 2200,
-    height = 2200,
-    res = 200
-)
-
-par(
-    mfrow = c(2, 2)
-)
-
-gam.check(
-    gamm_result,
-    type = "deviance",
-    k.sample = 5000,
-    k.rep = 200
-)
-
-dev.off()
-
-cat(
-    "Graphiques diagnostiques enregistrés :",
-    diagnostic_plot_file,
-    "\n"
-)
 
 # ============================================================================
 # CONTRÔLE NUMÉRIQUE DE k
@@ -1066,11 +1028,6 @@ print(
 
 cat(
     smooth_plot_file,
-    "\n"
-)
-
-cat(
-    diagnostic_plot_file,
     "\n"
 )
 

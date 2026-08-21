@@ -338,7 +338,7 @@ Codage binaire :
 ## Sorties
 
 ```text
-results/tables/computational-models/dataset_analysis_E1_n20.csv
+results/tables/computational-model/linear-mixed-model/mixed/dataset_analysis_E1_n20.csv
 results/analysis/computational-models/analysis_E1_outputs/data_audit_E1.txt
 ```
 
@@ -402,7 +402,7 @@ La variance participant est beaucoup plus grande que la variance item. Les parti
 
 ## Sorties
 
-Dans `results/analysis/computational-models/null_mixed_model_E1_n20/` :
+Dans `results/analysis/computational-model/linear-mixed-model/null_mixed_model_E1_n20/` :
 ```text
 null_model_REML_summary.txt
 null_model_variance_components.csv
@@ -458,7 +458,7 @@ LR\approx24{,}47,\qquad p<0{,}001
 
 ## Sorties
 
-Dans `results/analysis/computational-models/control_mixed_model_E1_n20/` : 
+Dans `results/analysis/computational-model/linear-mixed-model/control_mixed_model_E1_n20/` : 
 
 ```text
 control_model_REML_summary.txt
@@ -532,7 +532,7 @@ L’ajout du bloc cognitif améliore clairement le modèle de contrôle. Cette a
 
 ## Sorties
 
-Dans `results/analysis/computational-models/cognitive_mixed_model_E1_n20`
+Dans `results/analysis/computational-model/linear-mixed-model/cognitive_mixed_model_E1_n20`
 
 ```text
 cognitive_model_REML_summary.txt
@@ -642,7 +642,7 @@ En revanche, les effets de condition et de séquence semblent être largement li
 
 ## Sorties
 
-Dans `results/analysis/computational-models/ceiling_sensitivity_E1_n20/` :
+Dans `results/analysis/computational-model/linear-mixed-model/ceiling_sensitivity_E1_n20/` :
 
 ```text
 ceiling_summary.csv
@@ -739,7 +739,7 @@ Les probabilités ajustées au milieu de la séquence sont approximativement :
 Les résultats de ce modèle mettent en exergue les paramètres conditionnels : on observe une "fatigue" du participant face à 64 items à répondre et il apparaît aussi qu'un participant répondant aux items Standard est plus à même d'avoir entièrement confiance dans ses réponses.  
 
 ## Sorties
-Dans `results/analysis/computational-models/ceiling_logistic_mixed_model_E1_n20/` :
+Dans `results/analysis/computational-model/linear-mixed-model/ceiling_logistic_mixed_model_E1_n20/` :
 
 ```text
 ceiling_by_condition.csv
@@ -788,12 +788,13 @@ results/
 │
 └── analysis/
     └── computational-model/
-        ├── null_mixed_model_E1_n20/
-        ├── control_mixed_model_E1_n20/
-        ├── cognitive_mixed_model_E1_n20/
-        ├── sensitivity_mixed_model_E1_n20/
-        ├── ceiling_sensitivity_E1_n20/
-        └── ceiling_logistic_mixed_model_E1_n20/
+        └── linear-mixed-model/
+            ├── null_mixed_model_E1_n20/
+            ├── control_mixed_model_E1_n20/
+            ├── cognitive_mixed_model_E1_n20/
+            ├── sensitivity_mixed_model_E1_n20/
+            ├── ceiling_sensitivity_E1_n20/
+            └── ceiling_logistic_mixed_model_E1_n20/
 ```
 ---
 

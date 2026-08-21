@@ -1,5 +1,22 @@
 # GAM/GAMM
 
+## Sommaire
+
+- [Rappel](#rappel)
+- [Exécution rapide](#exécution-rapide)
+- [1. Justification du choix du GAM](#1-justification-du-choix-du-gam)
+- [2. Python : fonctionnement du GAM avec pyGAM](#2-python--fonctionnement-du-gam-avec-pygam)
+- [4. Limites de Python et passage à R](#4-les-limites-de-python-et-le-passage-à-r)
+- [5. GAMM ajusté avec R](#5-gamm-ajusté-avec-r)
+- [6. Analyse des résultats du GAMM](#6-analyse-des-résultats-du-gamm)
+- [7. Effets aléatoires](#7-les-effets-aléatoires)
+- [8. Composantes retournées par gam.vcomp](#8-point-sur-gamvcomp)
+- [9. Fichiers produits par le GAMM](#9-fichiers-produits-par-le-gamm)
+- [10. Vérification de la dimension des bases](#10-vérification-de-la-dimension-des-bases)
+- [11. Conclusion du modèle exploratoire](#11-conclusion-du-modèle-exploratoire)
+- [Explication détaillée du k-index](#explication-plus-détaillée-du-k-index)
+
+
 ## Rappel
 
 Nous cherchons à expliquer la **confiance**, mesurée entre 0 et 100, à partir de plusieurs variables :
@@ -20,9 +37,51 @@ Les données ont une structure particulière :
 - chaque participant répond à plusieurs items ;
 - chaque item est présenté à plusieurs participants.
 
-Nous avions d’abord utilisé un **modèle linéaire mixte** (voir [computational-model](../computational_model/)). Ce modèle supposait que les relations entre les prédicteurs numériques et la confiance étaient des droites.
+Nous avions d’abord utilisé un **modèle linéaire mixte** (voir [computational-model](../linear-mixed-model/)). Ce modèle supposait que les relations entre les prédicteurs numériques et la confiance étaient des droites.
 
 Nous avons ensuite utilisé un **GAM**, puis un véritable **GAMM**, afin de vérifier si certaines de ces relations étaient en réalité courbées ou plus complexes.
+
+---
+
+## Exécution rapide
+
+Toutes les commandes doivent être lancées depuis la racine du dépôt.
+
+### 1. Vérifier la préparation des données pour Python
+
+```bash
+python3 src/analysis/computational-model/gam/prepare_gam_data_E1_n20.py
+```
+
+Ce script vérifie les données, construit les variables standardisées et encode les facteurs nécessaires à pyGAM. Il ne produit pas directement de fichier de résultats.
+
+### 2. Ajuster le GAM exploratoire avec Python
+
+```bash
+python3 src/analysis/computational-model/gam/fit_gam_model_E1_n20.py
+
+python3 src/analysis/computational-model/gam/fit_gam_model_parsimonious_E1_n20.py
+```
+
+Cette étape produit les courbes exploratoires obtenues avec pyGAM. Les participants et les items y sont représentés par des facteurs pénalisés et non par des effets aléatoires dont la variance est explicitement estimée.
+
+Les résultats se trouvent ici : 
+- [gamm_model_E1_n20](../../../../results/analysis/computational-model/gam/gam_model_E1_n20/)
+- [gamm_parsimonious_E1_n20](../../../../results/analysis/computational-model/gam/gam_parsimonious_E1_n20/)
+
+### 3. Ajuster le GAMM avec R
+
+```bash
+Rscript src/analysis/computational-model/gam/fit_gamm_exploratory_E1_n20.R
+```
+Cette étape constitue l’analyse principale. Elle estime :
+
+- les fonctions lisses ;
+- leurs paramètres de pénalisation ;
+- les intercepts aléatoires des participants et des items ;
+- les diagnostics du modèle.
+
+Les résultats se trouvent ici : [gamm_exploratory_E1_n20](../../../../results/analysis/computational-model/gam/gamm_exploratory_E1_n20/)
 
 ---
 
@@ -36,7 +95,8 @@ Le modèle linéaire impose une relation de la forme :
 f(x)=\beta x.
 \]
 
-C’est une droite. Or, ce n’est pas forcément réaliste
+Ce n’est pas forcément réaliste
+
 ---
 
 ## 1.2 Définition GAM ?
@@ -132,9 +192,9 @@ Nous avons commencé par créer :
 prepare_gam_data_E1_n20.py
 ```
 
-Ce script ne produisait volontairement aucun résultat statistique. Son rôle était de préparer correctement les données et de vérifier que le GAM recevrait une matrice exploitable.
+Son rôle est de préparer correctement les données et de vérifier que le GAM reçoit une matrice exploitable.
 
-Il réalisait les opérations suivantes :
+Il réalise les opérations suivantes :
 
 1. charger `dataset_analysis_E1_n20.csv` ;
 2. vérifier les colonnes nécessaires ;
@@ -302,18 +362,6 @@ LinearGAM(
 )
 ```
 
-Cela signifie :
-
-- condition catégorielle ;
-- spline de la séquence ;
-- spline de la précision ;
-- spline de l’entropie ;
-- spline du nombre moyen de modèles ;
-- spline de la composante intra-individuelle ;
-- validité catégorielle ;
-- facteur participant pénalisé ;
-- facteur item pénalisé.
-
 Les pénalisations étaient fixées manuellement :
 
 ```python
@@ -321,7 +369,7 @@ SPLINE_LAMBDA = 10
 GROUP_FACTOR_LAMBDA = 10
 ```
 
-Ce modèle était volontairement exploratoire.
+Ce modèle était donc volontairement exploratoire.
 
 ---
 
@@ -343,15 +391,28 @@ Une grande partie de sa complexité venait de :
 
 Cela indiquait que les différences entre participants et entre items occupaient une part importante du modèle.
 
+### Interprétation des degrés de liberté effectifs
+
+Les **degrés de liberté effectifs**, ou `edf`, indiquent la complexité réellement utilisée par un terme après pénalisation.
+
+Ils ne correspondent pas simplement au nombre de coefficients présents dans le programme. 
+
+En pratique :
+
+- un `edf` proche de 1 correspond à une relation presque linéaire ;
+- un `edf` compris entre 1 et 2 indique une légère courbure ;
+- un `edf` plus élevé indique une forme plus complexe, avec davantage de changements de pente ;
+- un `edf` proche de sa limite maximale suggère que la spline utilise presque toute la flexibilité autorisée.
+
 ---
 
 ## 2.10 Les courbes exploratoires de Python
 
-Les courbes sont disponibles dans [data/analysis/GAM](../../data/analysis/GAM/) après exécution du programme `fit_gam_model_E1_n20.py`
+Les courbes sont disponibles dans [results](../../../../results/analysis/computational-model/gam/) après exécution du programme `fit_gam_model_E1_n20.py`
 
 ### Séquence
 
-La courbe montrait :
+La courbe montre :
 
 - une forte diminution au début ;
 - une légère remontée vers le milieu ;
@@ -362,7 +423,7 @@ Entre le premier et le dernier essai, la contribution diminuait d’environ troi
 
 ### Entropie
 
-La relation était :
+La relation est :
 
 - monotone ;
 - décroissante ;
@@ -373,28 +434,28 @@ Entre les valeurs extrêmes observées, la contribution diminuait d’environ 9 
 
 ### Précision
 
-La courbe ressemblait à une forme en U :
+La courbe ressemble à une forme en U :
 
 - confiance élevée chez certains participants peu précis ;
 - confiance plus faible autour de la précision moyenne ;
 - confiance fortement élevée chez les participants très précis.
 
-Cette forme pouvait être psychologiquement intéressante. Cependant, certaines extrémités n’étaient représentées que par un très petit nombre de participants.
+Cette forme peut être psychologiquement intéressante. Cependant, les extrémités ne sont représentées que par un très petit nombre de participants.
 
 ### Nombre moyen de modèles
 
-La courbe présentait également une forme en U très marquée.
+La courbe présente également une forme en U très marquée.
 
-Mais cette variable ne prenait qu’un nombre limité de valeurs bien représentées. Entre ces valeurs, la spline interpolait souvent dans des régions ne contenant aucun participant.
+Mais cette variable ne prend qu’un nombre limité de valeurs bien représentées. Entre ces valeurs, la spline interpole souvent dans des régions ne contenant aucun participant.
 
 ### Composante intra-individuelle
 
-La courbe présentait une forme en cloche :
+La courbe présente une forme en cloche :
 
 - augmentation jusqu’à un maximum ;
 - puis diminution.
 
-Mais les intervalles étaient larges et le support des données était discontinu.
+Mais les intervalles sont larges et le support des données était discontinu.
 
 ---
 
@@ -402,7 +463,7 @@ Mais les intervalles étaient larges et le support des données était discontin
 
 Nous avons voulu vérifier si les résultats plus stables persistaient en imposant une forme linéaire aux prédicteurs dont les courbes semblaient fragiles.
 
-Le modèle était :
+Le modèle est :
 
 ```python
 LinearGAM(
@@ -418,7 +479,7 @@ LinearGAM(
 )
 ```
 
-Cela ne signifiait pas que nous avions démontré que la précision ou le nombre de modèles étaient linéaires. C’était seulement une **spécification de comparaison plus simple**.
+Cela ne signifiait pas que nous avions démontré que la précision ou le nombre de modèles étaient linéaires. C’était seulement une spécification de comparaison plus simple.
 
 ---
 
@@ -436,40 +497,7 @@ Nous avons obtenu :
 
 Ces valeurs étaient presque identiques à celles du modèle linéaire mixte.
 
-Cela montrait que l’introduction de courbes pour la séquence et l’entropie ne bouleversait pas les autres estimations.
-
----
-## Niveau des variables : 
-
-### Variables au niveau de l’essai
-
-```text
-sequence
-validity
-models_within_subject
-```
-
-### Variables au niveau du participant
-
-```text
-subject_accuracy
-subject_mean_models
-condition
-```
-
-La condition est ici portée par le participant si chaque participant appartient à une seule condition.
-
-### Variables au niveau de l’item
-
-```text
-item_entropy
-```
-
-Ainsi, 9 024 lignes ne signifient pas 9 024 valeurs indépendantes de précision. La précision repose sur 141 participants.
-
-De même, l’entropie repose sur 128 items.
-
-Ce point est essentiel pour interpréter les courbes : une forme à l’extrémité de la précision peut parfois reposer sur seulement un ou deux participants.
+**Cela montre que l’introduction de courbes pour la séquence et l’entropie ne bouleversait pas les autres estimations.**
 
 ---
 
@@ -490,15 +518,7 @@ Cela créait un coefficient pour chaque participant et chaque item, avec une pé
 \lambda\sum_i u_i^2.
 \]
 
-Ce mécanisme rapproche les coefficients de zéro. Il ressemble mathématiquement à un effet aléatoire gaussien.
-
-Cependant, nous avions choisi arbitrairement :
-
-```python
-GROUP_FACTOR_LAMBDA = 10
-```
-
-Le logiciel n’estimait donc pas explicitement :
+Le logiciel ne permettait pas de faire un modèle mixte et n’estimait donc pas explicitement :
 
 \[
 \sigma^2_{\text{participant}}
@@ -510,24 +530,8 @@ et :
 \sigma^2_{\text{item}}.
 \]
 
-Il estimait des coefficients catégoriels pénalisés, mais ne nous donnait pas directement :
 
-- la variance participant ;
-- la variance item ;
-- les intervalles autour de ces variances ;
-- une véritable estimation mixte par REML.
-
-La précision et le nombre moyen de modèles sont des variables définies au niveau du participant.
-
-Le modèle contenait simultanément :
-
-```python
-s(subject_accuracy_z)
-s(subject_mean_models_z)
-f(subject_code)
-```
-
-La spline de précision et le facteur participant pouvaient se partager la même variation.
+## 4.2 Pénalisation
 
 Le choix arbitraire de la pénalisation participant déterminait en partie quelle quantité de variation était attribuée :
 
@@ -537,14 +541,8 @@ Le choix arbitraire de la pénalisation participant déterminait en partie quell
 
 Le même problème existait entre :
 
-```python
-s(item_entropy_z)
-f(item_code)
-```
+# 4.3 item et participation dans les courbes données
 
-au niveau des items.
-
-Cela ne rendait pas l’exploration inutile, mais limitait la fiabilité des formes estimées.
 
 ---
 
@@ -581,7 +579,7 @@ lambda = 10
 
 à tous les termes.
 
-L’estimation par REML — ou `fREML` avec `gam()` — choisit la régularisation à partir des données.
+L’estimation par REML avec `gam()` — choisit la régularisation à partir des données.
 
 ---
 
@@ -589,7 +587,7 @@ L’estimation par REML — ou `fREML` avec `gam()` — choisit la régularisati
 
 ## 5.1 Formule utilisée
 
-Le modèle était :
+Le modèle est :
 
 ```r
 confidence ~
@@ -604,7 +602,7 @@ confidence ~
     + s(item_id, bs = "re")
 ```
 
-Il contient donc :
+Il contient :
 
 ### Effets catégoriels
 
@@ -683,7 +681,7 @@ p=0{,}199.
 
 ## 6.4 Séquence
 
-Résultat :
+Résultat : 
 
 ```text
 edf = 4,094
@@ -715,7 +713,7 @@ F = 2,252
 p = 0,0958
 ```
 
-L’`edf supérieur à 2 montre que la forme estimée possède une courbure. Le véritable GAMM ne réduit donc pas complètement la précision à une droite.
+L’edf supérieur à 2 montre que la forme estimée possède une courbure. Le véritable GAMM ne réduit donc pas complètement la précision à une droite.
 
 Cela suggère que la forme en U observée en Python n’était peut-être pas entièrement artificielle.
 
@@ -745,7 +743,7 @@ L’`edf` est presque exactement égal à 1. La relation est donc pratiquement l
 p<0{,}001.
 \]
 
-Cela montre qu’une relation peut être très importante sans être non linéaire.
+La relation est très probable. 
 
 ---
 
@@ -773,7 +771,6 @@ Cela suggère que la forme en U de Python venait probablement de plusieurs élé
 
 - une pénalisation arbitraire des participants ;
 - une distribution discontinue de la variable ;
-- des interpolations entre des valeurs absentes ;
 - la difficulté de séparer la spline du facteur participant.
 
 
@@ -853,7 +850,7 @@ La confiance dépend fortement de la manière générale dont chaque participant
 
 ---
 
-# 8. `gam.vcomp()`
+# 8. Point sur `gam.vcomp()`
 
 Le tableau contient aussi des lignes comme :
 
@@ -893,7 +890,7 @@ Pour la décomposition de la variance, il faut donc se concentrer sur :
 
 # 9. Fichiers produits par le GAMM
 
-Les résultats sont enregistrés dans [gamm_exploratory_E1_n20/](../../../results/analysis/computational_model/gamm_exploratory_E1_n20/)
+Pour rappel, les résultats sont enregistrés dans [gamm_exploratory_E1_n20/](../../../../results/analysis/computational-model/gam/gamm_exploratory_E1_n20/)
 
 | Fichier | Contenu | Utilité |
 | --- | --- | --- |
@@ -902,9 +899,6 @@ Les résultats sont enregistrés dans [gamm_exploratory_E1_n20/](../../../result
 | gamm_exploratory_smooth_effects.csv | Valeurs numériques des courbes et intervalles à 95 % | Reproductibilité et analyse détaillée |
 | gamm_exploratory_variance_components.csv | Paramètres de lissage et écarts-types des effets aléatoires | Décomposition participant, item et résiduelle |
 | gamm_exploratory_k_check.csv | Vérification de la dimension des bases | Diagnostic de la flexibilité des splines |
-| gamm_exploratory_diagnostics.png | Distribution et structure des résidus | Vérification des hypothèses du modèle |
-
-Ajoute les sections suivantes **à la suite de la section 8 — `gam.vcomp()`**, sans remplacer le reste du README.
 
 ---
 
@@ -941,64 +935,7 @@ Les valeurs sont absentes pour les effets aléatoires participant et item, car c
 
 ---
 
-# 11. Analyse des fonctions estimées
-
-## Séquence
-
-La confiance diminue fortement au début de l’expérience. Elle se stabilise ensuite avant d’atteindre un minimum autour des essais 50 à 52. La remontée finale reste incertaine.
-
-Cette relation est clairement non linéaire :
-
-```text
-edf = 4,094
-p < 0,001
-```
-
-## Précision
-
-La courbe présente une forme en U, avec une confiance estimée plus élevée aux deux extrêmes de précision.
-
-```text
-edf = 2,239
-p = 0,096
-```
-
-Ce n’est pas suffisamment précise pour conclure à une association robuste.
-
-## Entropie
-
-La relation est robuste et presque parfaitement linéaire :
-
-```text
-edf = 1,009
-p < 0,001
-```
-
-## Nombre moyen de modèles
-
-La fonction est pratiquement linéaire et décroissante, mais son intervalle recouvre zéro sur toute l’étendue :
-
-```text
-edf = 1,001
-p = 0,296
-```
-
-La forme en U observée avec `pyGAM` n’est donc pas confirmée par le GAMM.
-
-## Composante intra-individuelle
-
-La fonction présente une faible courbure, mais son amplitude est limitée et ses intervalles recouvrent zéro :
-
-```text
-edf = 1,665
-p = 0,275
-```
-
-Aucune association robuste n’est détectée.
-
----
-
-# 12. Conclusion du modèle exploratoire
+# 11. Conclusion du modèle exploratoire
 
 Le GAMM met principalement en évidence :
 
@@ -1044,7 +981,7 @@ e_i=y_i-\widehat y_i.
 
 Si le modèle a correctement représenté la relation, deux observations proches sur l’axe du prédicteur ne devraient pas avoir des résidus systématiquement semblables.
 
-`k.check()` compare alors deux estimations de la variance résiduelle. [documentation](https://rdrr.io/cran/mgcv/man/k.check.html)
+`k.check()` compare alors deux estimations de la variance résiduelle. (voir [documentation](https://rdrr.io/cran/mgcv/man/k.check.html))
 
 ### Variance résiduelle globale
 

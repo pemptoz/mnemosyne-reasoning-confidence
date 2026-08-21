@@ -550,9 +550,10 @@ Elle comprend notamment :
 - des analyses de sensibilité ;
 - une analyse spécifique de l'utilisation de la confiance maximale.
 
-La documentation détaillée de cette partie est disponible dans :
+La documentation détaillée de cette partie est disponible ici :
 
-[`src/analysis/computational_models/README.md`](src/analysis/computational_model/README.md)
+- [`linear-mixed-model`](src/analysis/computational-model/linear-mixed-model/README.md)
+- [`gam`](src/analysis/computational-model/gam/README.md)
 
 
 
