@@ -66,13 +66,14 @@ from prepare_gam_data_E1_n20 import (
 # ============================================================================
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parents[2]
+PROJECT_ROOT = SCRIPT_DIR.parents[3]
 
 OUTPUT_DIR = (
     PROJECT_ROOT
     / "results"
     / "analysis"
-    / "GAM"
+    / "computational-model"
+    / "gam"
     / "gam_parsimonious_E1_n20"
 )
 

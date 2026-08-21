@@ -87,6 +87,7 @@ project_root <- normalizePath(
         script_dir,
         "..",
         "..",
+        "..",
         ".."
     ),
     mustWork = TRUE
@@ -101,7 +102,7 @@ data_file <- file.path(
     project_root,
     "results",
     "tables",
-    "computational_model",
+    "computational-model",
     "dataset_analysis_E1_n20.csv"
 )
 
@@ -109,7 +110,8 @@ output_dir <- file.path(
     project_root,
     "results",
     "analysis",
-    "GAM",
+    "computational-model",
+    "gam",
     "gamm_exploratory_E1_n20"
 )
 

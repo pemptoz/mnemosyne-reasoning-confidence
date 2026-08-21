@@ -68,6 +68,7 @@ PROJECT_ROOT = os.path.abspath(
         "..",
         "..",
         "..",
+        "..",
     )
 )
 
@@ -75,7 +76,7 @@ INPUT_FILE = os.path.join(
     PROJECT_ROOT,
     "results",
     "tables",
-    "computational_model",
+    "computational-model",
     "dataset_analysis_E1_n20.csv",
 )
 
@@ -83,7 +84,8 @@ OUTPUT_DIRECTORY = os.path.join(
     PROJECT_ROOT,
     "results",
     "analysis",
-    "computational_model",
+    "computational-model",
+    "linear-mixed-model",
     "null_mixed_model_E1_n20",
 )
 

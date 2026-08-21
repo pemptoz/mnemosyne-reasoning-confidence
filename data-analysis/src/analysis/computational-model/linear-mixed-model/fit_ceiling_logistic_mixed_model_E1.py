@@ -9,7 +9,7 @@ l'utilisation de la valeur maximale de confiance dans l'expérience E1.
 
 Fichier d'entrée
 ----------------
-results/tables/computational_model/dataset_analysis_E1_n20.csv
+results/tables/computational-model/dataset_analysis_E1_n20.csv
 
 Variable dépendante
 -------------------
@@ -71,13 +71,13 @@ from statsmodels.genmod.bayes_mixed_glm import (
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
-PROJECT_ROOT = SCRIPT_DIR.parents[2]
+PROJECT_ROOT = SCRIPT_DIR.parents[3]
 
 DATA_FILE = (
     PROJECT_ROOT
     / "results"
     / "tables"
-    / "computational_model"
+    / "computational-model"
     / "dataset_analysis_E1_n20.csv"
 )
 
@@ -85,7 +85,8 @@ OUTPUT_DIR = (
     PROJECT_ROOT
     / "results"
     / "analysis"
-    / "computational_model"
+    / "computational-model"
+    / "linear-mixed-model"
     / "ceiling_logistic_mixed_model_E1_n20"
 )
 

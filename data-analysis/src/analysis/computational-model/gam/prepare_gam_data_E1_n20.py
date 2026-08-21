@@ -34,15 +34,14 @@ import pandas as pd
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
-# Depuis src/analysis/GAM/, parents[2]
 # correspond à la racine du projet.
-PROJECT_ROOT = SCRIPT_DIR.parents[2]
+PROJECT_ROOT = SCRIPT_DIR.parents[3]
 
 DATA_FILE = (
     PROJECT_ROOT
     / "results"
     / "tables"
-    / "GAM"
+    / "gam"
     / "dataset_analysis_E1_n20.csv"
 )
 

@@ -2,55 +2,55 @@
 # -*- coding: utf-8 -*-
 
 """
-fit_cognitive_mixed_model_E1_n20.py
+fit_control_mixed_model_E1.py
 
-Ajuste le modèle linéaire mixte cognitif principal de la confiance
-pour l'expérience E1.
+Ajuste le modèle mixte de contrôle de la confiance pour
+l'expérience E1.
 
 Fichier d'entrée
 ----------------
 dataset_analysis_E1_n20.csv
 
-Modèles ajustés en ML
----------------------
-1. Modèle nul :
+Modèle nul
+----------
+confidence ~ 1
 
-    confidence ~ 1
+Modèle de contrôle
+------------------
+confidence ~
+    condition
+    + sequence_c10
 
-2. Modèle de contrôle :
+La condition Neutral est la catégorie de référence.
 
-    confidence ~ condition + sequence_c10
+La variable sequence_c10 est définie par :
 
-3. Modèle cognitif :
+    sequence_c10 = (sequence - moyenne(sequence)) / 10
 
-    confidence ~
-        condition
-        + sequence_c10
-        + subject_accuracy_z
-        + item_entropy_z
-        + subject_mean_models_z
-        + models_within_subject_z
-
-Le modèle cognitif est également ajusté en REML pour obtenir les
-coefficients finaux et les composantes de variance.
-
-La validité est encore incluse dans le modèle cognitif principal.
-L'analyse de sensibilité déterminera ensuite si elle apporte une
-amélioration suffisante pour être conservée dans le modèle final.
+Son coefficient représente donc la variation moyenne de confiance
+associée à dix essais supplémentaires.
 
 Effets aléatoires croisés
 -------------------------
 - intercept participant ;
 - intercept item.
 
+Estimations
+-----------
+ML :
+    utilisé pour comparer le modèle nul au modèle de contrôle.
+
+REML :
+    utilisé pour présenter les coefficients et les composantes de
+    variance du modèle de contrôle.
+
 Fichiers produits
 -----------------
-cognitive_mixed_model_E1_n20/
-    cognitive_model_REML_summary.txt
-    cognitive_model_fixed_effects.csv
-    model_fit_statistics.csv
-    likelihood_ratio_tests.csv
-    cognitive_model_metrics.csv
+control_mixed_model_E1_n20/
+    control_model_REML_summary.txt
+    control_model_fixed_effects.csv
+    model_comparison.csv
+    control_model_metrics.csv
 """
 
 from pathlib import Path
@@ -68,14 +68,13 @@ import statsmodels.formula.api as smf
 # ============================================================================
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-
-PROJECT_ROOT = SCRIPT_DIR.parents[2]
+PROJECT_ROOT = SCRIPT_DIR.parents[3]
 
 DATA_FILE = (
     PROJECT_ROOT
     / "results"
     / "tables"
-    / "computational_model"
+    / "computational-model"
     / "dataset_analysis_E1_n20.csv"
 )
 
@@ -83,8 +82,9 @@ OUTPUT_DIR = (
     PROJECT_ROOT
     / "results"
     / "analysis"
-    / "computational_model"
-    / "cognitive_mixed_model_E1_n20"
+    / "computational-model"
+    / "linear-mixed-model"
+    / "control_mixed_model_E1_n20"
 )
 
 OUTPUT_DIR.mkdir(
@@ -99,28 +99,24 @@ OUTPUT_DIR.mkdir(
 
 REML_SUMMARY_FILE = (
     OUTPUT_DIR
-    / "cognitive_model_REML_summary.txt"
+    / "control_model_REML_summary.txt"
 )
 
 FIXED_EFFECTS_FILE = (
     OUTPUT_DIR
-    / "cognitive_model_fixed_effects.csv"
+    / "control_model_fixed_effects.csv"
 )
 
-MODEL_FIT_STATISTICS_FILE = (
+MODEL_COMPARISON_FILE = (
     OUTPUT_DIR
-    / "model_fit_statistics.csv"
-)
-
-LIKELIHOOD_RATIO_TESTS_FILE = (
-    OUTPUT_DIR
-    / "likelihood_ratio_tests.csv"
+    / "model_comparison.csv"
 )
 
 MODEL_METRICS_FILE = (
     OUTPUT_DIR
-    / "cognitive_model_metrics.csv"
+    / "control_model_metrics.csv"
 )
+
 
 
 # --------------------------------------------------------------------------
@@ -136,18 +132,6 @@ CONTROL_FORMULA = (
     "C(condition, Treatment(reference='Neutral')) "
     "+ sequence_c10"
 )
-
-COGNITIVE_FORMULA = (
-    "confidence ~ "
-    "C(condition, Treatment(reference='Neutral')) "
-    "+ sequence_c10 "
-    "+ subject_accuracy_z "
-    "+ item_entropy_z "
-    "+ subject_mean_models_z "
-    "+ models_within_subject_z "
-    "+ validity_binary"
-)
-
 
 
 # --------------------------------------------------------------------------
@@ -167,31 +151,22 @@ VC_FORMULA = {
 # Colonnes nécessaires
 # --------------------------------------------------------------------------
 
-ESSENTIAL_COLUMNS = [
+REQUIRED_COLUMNS = [
     "confidence",
     "subject_id",
     "item_id",
     "condition",
     "sequence",
-    "subject_accuracy",
-    "item_entropy",
-    "subject_mean_models",
-    "models_within_subject",
-    "validity_binary",
-]
-
-
-STANDARDIZED_COLUMNS = [
-    "subject_accuracy",
-    "item_entropy",
-    "subject_mean_models",
-    "models_within_subject",
 ]
 
 
 # --------------------------------------------------------------------------
-# Options d'optimisation
+# Options
 # --------------------------------------------------------------------------
+
+REFERENCE_CONDITION = "Neutral"
+
+SEQUENCE_SCALE = 10.0
 
 OPTIMIZERS = [
     "lbfgs",
@@ -223,9 +198,9 @@ def section(title):
 
 def safe_float(value):
     """
-    Convertit une valeur numérique en float.
+    Convertit une valeur en float.
 
-    Retourne NaN si la valeur ne peut pas être convertie ou si elle
+    Retourne NaN si la conversion est impossible ou si la valeur
     n'est pas finie.
     """
     try:
@@ -268,44 +243,25 @@ def normalize_identifier(value):
     return normalized
 
 
-def standardize(series):
+def normalize_condition(value):
     """
-    Standardise une variable avec l'écart-type empirique ddof=1.
-
-    z = (x - moyenne) / écart-type
+    Normalise la condition vers Neutral ou Standard.
     """
-    numeric = pd.to_numeric(
-        series,
-        errors="coerce",
-    )
+    if pd.isna(value):
+        return pd.NA
 
-    mean = float(
-        numeric.mean()
-    )
+    normalized = str(value).strip().lower()
 
-    standard_deviation = float(
-        numeric.std(ddof=1)
-    )
+    if normalized in {
+        "neutral",
+        "neutre",
+    }:
+        return "Neutral"
 
-    if (
-        not np.isfinite(standard_deviation)
-        or standard_deviation <= 0
-    ):
-        raise ValueError(
-            "Impossible de standardiser "
-            f"{series.name} : "
-            f"écart-type = {standard_deviation}"
-        )
+    if normalized == "standard":
+        return "Standard"
 
-    standardized = (
-        numeric - mean
-    ) / standard_deviation
-
-    return (
-        standardized,
-        mean,
-        standard_deviation,
-    )
+    return pd.NA
 
 
 # ============================================================================
@@ -314,8 +270,7 @@ def standardize(series):
 
 def load_and_prepare_data():
     """
-    Charge le dataset, vérifie les colonnes et construit les variables
-    centrées ou standardisées.
+    Charge le dataset analytique et construit sequence_c10.
     """
     section(
         "CHARGEMENT ET PRÉPARATION DES DONNÉES"
@@ -342,7 +297,7 @@ def load_and_prepare_data():
 
     missing_columns = [
         column
-        for column in ESSENTIAL_COLUMNS
+        for column in REQUIRED_COLUMNS
         if column not in data.columns
     ]
 
@@ -355,7 +310,7 @@ def load_and_prepare_data():
     data = data.copy()
 
     # ------------------------------------------------------------------
-    # Filtrage sur analysis_complete
+    # Filtrage des lignes déclarées complètes
     # ------------------------------------------------------------------
 
     if "analysis_complete" in data.columns:
@@ -384,24 +339,18 @@ def load_and_prepare_data():
         )
 
     # ------------------------------------------------------------------
-    # Conversion des colonnes numériques
+    # Conversion et normalisation
     # ------------------------------------------------------------------
 
-    numeric_columns = [
-        "confidence",
-        "sequence",
-        "subject_accuracy",
-        "item_entropy",
-        "subject_mean_models",
-        "models_within_subject",
-        "validity_binary",
-    ]
+    data["confidence"] = pd.to_numeric(
+        data["confidence"],
+        errors="coerce",
+    )
 
-    for column in numeric_columns:
-        data[column] = pd.to_numeric(
-            data[column],
-            errors="coerce",
-        )
+    data["sequence"] = pd.to_numeric(
+        data["sequence"],
+        errors="coerce",
+    )
 
     data["subject_id"] = (
         data["subject_id"]
@@ -417,13 +366,9 @@ def load_and_prepare_data():
 
     data["condition"] = (
         data["condition"]
+        .apply(normalize_condition)
         .astype("string")
-        .str.strip()
     )
-
-    # ------------------------------------------------------------------
-    # Suppression des données essentielles manquantes
-    # ------------------------------------------------------------------
 
     data = data.replace(
         [np.inf, -np.inf],
@@ -433,16 +378,16 @@ def load_and_prepare_data():
     before_drop = len(data)
 
     data = data.dropna(
-        subset=ESSENTIAL_COLUMNS
+        subset=REQUIRED_COLUMNS
     ).copy()
 
     print(
-        "Lignes supprimées pour donnée essentielle manquante :",
+        "Lignes retirées pour donnée essentielle manquante :",
         before_drop - len(data),
     )
 
     # ------------------------------------------------------------------
-    # Contrôles
+    # Contrôle de la confiance
     # ------------------------------------------------------------------
 
     invalid_confidence = (
@@ -452,10 +397,14 @@ def load_and_prepare_data():
 
     if invalid_confidence.any():
         raise ValueError(
-            "Certaines confiances sont hors de [0, 100]."
+            "Certaines valeurs de confiance sont hors de [0, 100]."
         )
 
-    valid_conditions = {
+    # ------------------------------------------------------------------
+    # Contrôle des conditions
+    # ------------------------------------------------------------------
+
+    expected_conditions = {
         "Neutral",
         "Standard",
     }
@@ -466,45 +415,37 @@ def load_and_prepare_data():
         .unique()
     )
 
-    if not observed_conditions.issubset(
-        valid_conditions
-    ):
+    if observed_conditions != expected_conditions:
         raise ValueError(
-            "Conditions inattendues : "
+            "Conditions attendues : Neutral et Standard. "
+            "Conditions observées : "
             f"{sorted(observed_conditions)}"
         )
 
-    if observed_conditions != valid_conditions:
+    if REFERENCE_CONDITION not in observed_conditions:
         raise ValueError(
-            "Les conditions Neutral et Standard doivent "
-            "toutes les deux être présentes."
+            "La condition de référence est absente : "
+            f"{REFERENCE_CONDITION}"
         )
 
-    validity_values = set(
-        data["validity_binary"]
-        .dropna()
-        .unique()
+    # ------------------------------------------------------------------
+    # Contrôle du nombre de participants et d'items
+    # ------------------------------------------------------------------
+
+    number_of_subjects = (
+        data["subject_id"].nunique()
     )
 
-    if not validity_values.issubset({0, 1, 0.0, 1.0}):
-        raise ValueError(
-            "validity_binary doit uniquement contenir "
-            "les valeurs 0 et 1. "
-            f"Valeurs observées : {sorted(validity_values)}"
-        )
-
-    data["validity_binary"] = (
-        data["validity_binary"]
-        .astype(int)
+    number_of_items = (
+        data["item_id"].nunique()
     )
 
-
-    if data["subject_id"].nunique() < 2:
+    if number_of_subjects < 2:
         raise ValueError(
             "Au moins deux participants sont nécessaires."
         )
 
-    if data["item_id"].nunique() < 2:
+    if number_of_items < 2:
         raise ValueError(
             "Au moins deux items sont nécessaires."
         )
@@ -520,44 +461,7 @@ def load_and_prepare_data():
     data["sequence_c10"] = (
         data["sequence"]
         - sequence_mean
-    ) / 10.0
-
-    # ------------------------------------------------------------------
-    # Standardisation des prédicteurs cognitifs
-    # ------------------------------------------------------------------
-
-    standardization_information = []
-
-    for column in STANDARDIZED_COLUMNS:
-        standardized_column = (
-            f"{column}_z"
-        )
-
-        (
-            data[standardized_column],
-            mean,
-            standard_deviation,
-        ) = standardize(
-            data[column]
-        )
-
-        standardization_information.append({
-            "variable":
-                column,
-
-            "standardized_variable":
-                standardized_column,
-
-            "mean":
-                mean,
-
-            "standard_deviation":
-                standard_deviation,
-        })
-
-    standardization_table = pd.DataFrame(
-        standardization_information
-    )
+    ) / SEQUENCE_SCALE
 
     # ------------------------------------------------------------------
     # Tri stable
@@ -582,41 +486,49 @@ def load_and_prepare_data():
 
     print(
         "Nombre de participants :",
-        data["subject_id"].nunique(),
+        number_of_subjects,
     )
 
     print(
         "Nombre d'items :",
-        data["item_id"].nunique(),
+        number_of_items,
     )
 
     print(
-        "Moyenne de confiance :",
-        round(
-            data["confidence"].mean(),
-            6,
-        ),
-    )
-
-    print(
-        "Centre de la séquence :",
+        "Moyenne de la séquence utilisée pour le centrage :",
         sequence_mean,
+    )
+
+    print(
+        "Une unité de sequence_c10 représente",
+        SEQUENCE_SCALE,
+        "essais.",
+    )
+
+    condition_counts = (
+        data[[
+            "subject_id",
+            "condition",
+        ]]
+        .drop_duplicates()
+        ["condition"]
+        .value_counts()
     )
 
     print("")
     print(
-        "Paramètres de standardisation :"
+        "Participants par condition :"
     )
 
-    print(
-        standardization_table
-        .to_string(index=False)
-    )
+    for condition, count in condition_counts.items():
+        print(
+            f"  {condition} :",
+            int(count),
+        )
 
     return (
         data,
         sequence_mean,
-        standardization_table,
     )
 
 
@@ -629,14 +541,15 @@ def build_model(
     formula,
 ):
     """
-    Construit un modèle à intercepts aléatoires croisés.
-
-    Toutes les observations sont placées dans un groupe artificiel
-    unique. Les participants et les items sont introduits comme
-    composantes de variance.
+    Construit un modèle mixte avec des intercepts aléatoires croisés
+    pour les participants et les items.
     """
     model_data = data.copy()
 
+    # Statsmodels exige une variable groups.
+    # Toutes les observations sont placées dans un groupe artificiel
+    # unique. Les participants et les items sont ensuite définis comme
+    # composantes de variance.
     model_data["_global_group"] = (
         "all_observations"
     )
@@ -660,8 +573,8 @@ def build_model(
 def fit_model(
     data,
     formula,
-    reml,
     model_name,
+    reml,
 ):
     """
     Essaie plusieurs optimiseurs.
@@ -775,25 +688,18 @@ def fit_model(
 
 
 # ============================================================================
-# EXTRACTION DES EFFETS FIXES
+# EFFETS FIXES
 # ============================================================================
 
 def create_fixed_effects_table(result):
     """
-    Extrait les coefficients REML et calcule les tests de Wald
-    bilatéraux.
+    Extrait les effets fixes du modèle REML.
 
-    Pour chaque coefficient :
+    Pour chaque coefficient, un test de Wald bilatéral est calculé :
 
         z = estimation / erreur standard
 
         p = 2 × P(Z > |z|)
-
-    sous l'approximation :
-
-        Z ~ N(0, 1)
-
-    lorsque l'hypothèse nulle beta = 0 est vraie.
     """
     parameter_names = list(
         result.fe_params.index
@@ -868,159 +774,7 @@ def create_fixed_effects_table(result):
 
 
 # ============================================================================
-# STATISTIQUES DES MODÈLES
-# ============================================================================
-
-def count_estimated_parameters(result):
-    """
-    Retourne le nombre de paramètres rapporté par le modèle.
-
-    Pour les différences de degrés de liberté du test LR, seuls les
-    paramètres ajoutés entre les deux modèles sont importants.
-    """
-    return int(
-        len(result.params)
-    )
-
-
-def create_model_statistics(
-    result,
-    model_name,
-    formula,
-    estimation,
-    optimizer,
-):
-    """
-    Crée une ligne de statistiques générales pour un modèle.
-    """
-    return {
-        "model":
-            model_name,
-
-        "estimation":
-            estimation,
-
-        "formula":
-            formula,
-
-        "converged":
-            bool(
-                getattr(
-                    result,
-                    "converged",
-                    False,
-                )
-            ),
-
-        "optimizer":
-            optimizer,
-
-        "log_likelihood":
-            safe_float(
-                result.llf
-            ),
-
-        # AIC et BIC sont utilisés pour les modèles ML.
-        "aic":
-            (
-                safe_float(result.aic)
-                if estimation == "ML"
-                else np.nan
-            ),
-
-        "bic":
-            (
-                safe_float(result.bic)
-                if estimation == "ML"
-                else np.nan
-            ),
-
-        "number_of_estimated_parameters":
-            count_estimated_parameters(
-                result
-            ),
-
-        "n_observations":
-            int(
-                result.nobs
-            ),
-
-        "residual_variance":
-            safe_float(
-                result.scale
-            ),
-    }
-
-
-# ============================================================================
-# TESTS DU RAPPORT DE VRAISEMBLANCE
-# ============================================================================
-
-def likelihood_ratio_test(
-    smaller_result,
-    larger_result,
-):
-    """
-    Compare deux modèles emboîtés ajustés en ML.
-
-    LR = 2 × (logL_grand - logL_petit)
-
-    Sous l'hypothèse nulle selon laquelle les paramètres ajoutés
-    n'améliorent pas le modèle :
-
-        LR suit approximativement une loi du chi-deux.
-
-    Les degrés de liberté correspondent au nombre de paramètres
-    supplémentaires.
-    """
-    smaller_log_likelihood = safe_float(
-        smaller_result.llf
-    )
-
-    larger_log_likelihood = safe_float(
-        larger_result.llf
-    )
-
-    likelihood_ratio = (
-        2
-        * (
-            larger_log_likelihood
-            - smaller_log_likelihood
-        )
-    )
-
-    degrees_of_freedom = (
-        count_estimated_parameters(
-            larger_result
-        )
-        - count_estimated_parameters(
-            smaller_result
-        )
-    )
-
-    if degrees_of_freedom <= 0:
-        p_value = np.nan
-
-    else:
-        p_value = stats.chi2.sf(
-            likelihood_ratio,
-            degrees_of_freedom,
-        )
-
-    return {
-        "likelihood_ratio":
-            likelihood_ratio,
-
-        "degrees_of_freedom":
-            degrees_of_freedom,
-
-        "p_value":
-            p_value,
-    }
-
-
-# ============================================================================
-# VARIANCES ET R²
+# COMPOSANTES DE VARIANCE
 # ============================================================================
 
 def get_variance_components(result):
@@ -1048,7 +802,7 @@ def get_variance_components(result):
             )
         ]
 
-    variance_map = {
+    component_map = {
         str(name).strip().lower():
             float(value)
 
@@ -1061,7 +815,7 @@ def get_variance_components(result):
     participant_variance = np.nan
     item_variance = np.nan
 
-    for name, variance in variance_map.items():
+    for name, variance in component_map.items():
         if "subject" in name:
             participant_variance = variance
 
@@ -1073,9 +827,9 @@ def get_variance_components(result):
         or pd.isna(item_variance)
     ):
         raise RuntimeError(
-            "Impossible d'identifier les variances "
+            "Impossible d'identifier les composantes "
             "participant et item. "
-            f"Composantes trouvées : {variance_map}"
+            f"Composantes trouvées : {component_map}"
         )
 
     return {
@@ -1086,19 +840,26 @@ def get_variance_components(result):
             item_variance,
 
         "residual_variance":
-            float(result.scale),
+            float(
+                result.scale
+            ),
     }
 
 
+# ============================================================================
+# R² ET MÉTRIQUES DU MODÈLE
+# ============================================================================
+
 def calculate_model_metrics(result):
     """
-    Calcule les composantes de variance et les R² de Nakagawa.
+    Calcule les composantes de variance et les R² du modèle REML.
 
     R² marginal :
-        variance expliquée par les effets fixes.
+        proportion de variance associée aux effets fixes.
 
     R² conditionnel :
-        variance expliquée par les effets fixes et aléatoires.
+        proportion de variance associée aux effets fixes et aux
+        effets aléatoires.
     """
     variances = get_variance_components(
         result
@@ -1137,11 +898,15 @@ def calculate_model_metrics(result):
         ]
     )
 
-    total_variance = (
-        fixed_effect_variance
-        + participant_variance
+    random_total_variance = (
+        participant_variance
         + item_variance
         + residual_variance
+    )
+
+    total_variance = (
+        fixed_effect_variance
+        + random_total_variance
     )
 
     marginal_r2 = (
@@ -1154,12 +919,6 @@ def calculate_model_metrics(result):
         + participant_variance
         + item_variance
     ) / total_variance
-
-    random_total = (
-        participant_variance
-        + item_variance
-        + residual_variance
-    )
 
     return {
         "fixed_effect_variance":
@@ -1176,7 +935,7 @@ def calculate_model_metrics(result):
         "participant_proportion_random_total":
             (
                 participant_variance
-                / random_total
+                / random_total_variance
             ),
 
         "item_variance":
@@ -1190,7 +949,7 @@ def calculate_model_metrics(result):
         "item_proportion_random_total":
             (
                 item_variance
-                / random_total
+                / random_total_variance
             ),
 
         "residual_variance":
@@ -1204,7 +963,7 @@ def calculate_model_metrics(result):
         "residual_proportion_random_total":
             (
                 residual_variance
-                / random_total
+                / random_total_variance
             ),
 
         "total_variance":
@@ -1219,18 +978,174 @@ def calculate_model_metrics(result):
 
 
 # ============================================================================
-# SAUVEGARDE DU RÉSUMÉ
+# COMPARAISON ML
+# ============================================================================
+
+def count_estimated_parameters(result):
+    """
+    Compte les paramètres figurant dans result.params.
+
+    La différence entre les deux modèles est utilisée comme nombre
+    de degrés de liberté du test LR.
+    """
+    return int(
+        len(result.params)
+    )
+
+
+def compare_ml_models(
+    null_result,
+    null_optimizer,
+    control_result,
+    control_optimizer,
+):
+    """
+    Compare le modèle nul et le modèle de contrôle en ML.
+
+    LR = 2 × (logL_contrôle - logL_nul)
+    """
+    null_log_likelihood = safe_float(
+        null_result.llf
+    )
+
+    control_log_likelihood = safe_float(
+        control_result.llf
+    )
+
+    likelihood_ratio = (
+        2
+        * (
+            control_log_likelihood
+            - null_log_likelihood
+        )
+    )
+
+    degrees_of_freedom = (
+        count_estimated_parameters(
+            control_result
+        )
+        - count_estimated_parameters(
+            null_result
+        )
+    )
+
+    if degrees_of_freedom <= 0:
+        raise RuntimeError(
+            "Le modèle de contrôle doit posséder plus de "
+            "paramètres que le modèle nul."
+        )
+
+    p_value = stats.chi2.sf(
+        likelihood_ratio,
+        degrees_of_freedom,
+    )
+
+    return pd.DataFrame([
+        {
+            "model":
+                "Null",
+
+            "formula":
+                NULL_FORMULA,
+
+            "estimation":
+                "ML",
+
+            "converged":
+                bool(
+                    null_result.converged
+                ),
+
+            "optimizer":
+                null_optimizer,
+
+            "log_likelihood":
+                null_log_likelihood,
+
+            "aic":
+                safe_float(
+                    null_result.aic
+                ),
+
+            "bic":
+                safe_float(
+                    null_result.bic
+                ),
+
+            "number_of_estimated_parameters":
+                count_estimated_parameters(
+                    null_result
+                ),
+
+            "likelihood_ratio_vs_null":
+                0.0,
+
+            "degrees_of_freedom_difference":
+                0,
+
+            "likelihood_ratio_p_value":
+                np.nan,
+        },
+        {
+            "model":
+                "Control",
+
+            "formula":
+                CONTROL_FORMULA,
+
+            "estimation":
+                "ML",
+
+            "converged":
+                bool(
+                    control_result.converged
+                ),
+
+            "optimizer":
+                control_optimizer,
+
+            "log_likelihood":
+                control_log_likelihood,
+
+            "aic":
+                safe_float(
+                    control_result.aic
+                ),
+
+            "bic":
+                safe_float(
+                    control_result.bic
+                ),
+
+            "number_of_estimated_parameters":
+                count_estimated_parameters(
+                    control_result
+                ),
+
+            "likelihood_ratio_vs_null":
+                likelihood_ratio,
+
+            "degrees_of_freedom_difference":
+                degrees_of_freedom,
+
+            "likelihood_ratio_p_value":
+                p_value,
+        },
+    ])
+
+
+# ============================================================================
+# SAUVEGARDE DU RÉSUMÉ REML
 # ============================================================================
 
 def save_reml_summary(
     result,
     optimizer,
     sequence_mean,
-    standardization_table,
     metrics,
 ):
     """
-    Sauvegarde le résumé complet du modèle cognitif final.
+    Sauvegarde le résumé du modèle de contrôle REML.
     """
     with open(
         REML_SUMMARY_FILE,
@@ -1238,7 +1153,7 @@ def save_reml_summary(
         encoding="utf-8",
     ) as output_file:
         output_file.write(
-            "MODÈLE MIXTE COGNITIF PRINCIPAL E1 — REML\n"
+            "MODÈLE MIXTE DE CONTRÔLE E1 — REML\n"
         )
 
         output_file.write(
@@ -1258,37 +1173,29 @@ def save_reml_summary(
         output_file.write("\n")
 
         output_file.write(
-            COGNITIVE_FORMULA
+            CONTROL_FORMULA
         )
 
         output_file.write("\n\n")
 
         output_file.write(
-            f"Optimiseur retenu : {optimizer}\n"
+            "Catégorie de référence de condition : "
+            f"{REFERENCE_CONDITION}\n"
         )
 
         output_file.write(
             f"Centre de la séquence : {sequence_mean:.6f}\n"
         )
 
-        output_file.write("\n")
-
         output_file.write(
-            "STANDARDISATION DES PRÉDICTEURS\n"
+            f"Échelle de la séquence : {SEQUENCE_SCALE:.1f} essais\n"
         )
 
         output_file.write(
-            "-" * 80
+            f"Optimiseur retenu : {optimizer}\n"
         )
 
         output_file.write("\n")
-
-        output_file.write(
-            standardization_table
-            .to_string(index=False)
-        )
-
-        output_file.write("\n\n")
 
         output_file.write(
             "RÉSUMÉ STATSMODELS\n"
@@ -1328,21 +1235,28 @@ def save_reml_summary(
 
 def remove_obsolete_output_files():
     """
-    Supprime les anciennes sorties que la version simplifiée
-    ne produit plus.
+    Supprime les anciennes sorties qui ne sont plus générées.
     """
     obsolete_filenames = [
-        "predictor_standardization.csv",
-        "cognitive_predictor_correlations.csv",
-        "high_predictor_correlations.csv",
-        "cognitive_model_ML_summary.txt",
-        "cognitive_model_fixed_effects_ML.csv",
-        "cognitive_model_fixed_effects_REML.csv",
+        "null_model_ML_summary.txt",
+        "control_model_ML_summary.txt",
+        "control_model_REML_summary.txt",
         "model_comparison.csv",
-        "variance_components.csv",
-        "model_r2.csv",
-        "cognitive_model_predictions.csv",
-        "cognitive_model_results.json",
+        "control_model_fixed_effects.csv",
+        "control_model_variance_components.csv",
+        "variance_comparison.csv",
+        "control_model_fit_statistics.csv",
+        "control_model_predictions.csv",
+        "condition_adjusted_means.csv",
+        "sequence_predictions.csv",
+        "control_model_residuals_vs_fitted.png",
+        "control_model_residual_distribution.png",
+        "control_model_qqplot.png",
+        "control_model_condition_effect.png",
+        "control_model_sequence_effect.png",
+        "control_model_variance_comparison.png",
+        "control_model_results.json",
+        "control_model_report.txt",
     ]
 
     for filename in obsolete_filenames:
@@ -1366,24 +1280,23 @@ def remove_obsolete_output_files():
 
 def main():
     section(
-        "MODÈLE MIXTE COGNITIF PRINCIPAL — EXPÉRIENCE E1"
+        "MODÈLE MIXTE DE CONTRÔLE — EXPÉRIENCE E1"
     )
 
     remove_obsolete_output_files()
 
     try:
         # ==================================================================
-        # 1. Données
+        # 1. Chargement et préparation
         # ==================================================================
 
         (
             data,
             sequence_mean,
-            standardization_table,
         ) = load_and_prepare_data()
 
         # ==================================================================
-        # 2. Modèles ML
+        # 2. Modèle nul ML
         # ==================================================================
 
         (
@@ -1392,51 +1305,45 @@ def main():
         ) = fit_model(
             data=data,
             formula=NULL_FORMULA,
-            reml=False,
             model_name="Modèle nul",
+            reml=False,
         )
+
+        # ==================================================================
+        # 3. Modèle de contrôle ML
+        # ==================================================================
 
         (
             control_ml,
-            control_optimizer,
+            control_ml_optimizer,
         ) = fit_model(
             data=data,
             formula=CONTROL_FORMULA,
-            reml=False,
             model_name="Modèle de contrôle",
-        )
-
-        (
-            cognitive_ml,
-            cognitive_ml_optimizer,
-        ) = fit_model(
-            data=data,
-            formula=COGNITIVE_FORMULA,
             reml=False,
-            model_name="Modèle cognitif",
         )
 
         # ==================================================================
-        # 3. Modèle final REML
+        # 4. Modèle de contrôle REML
         # ==================================================================
 
         (
-            cognitive_reml,
-            cognitive_reml_optimizer,
+            control_reml,
+            control_reml_optimizer,
         ) = fit_model(
             data=data,
-            formula=COGNITIVE_FORMULA,
+            formula=CONTROL_FORMULA,
+            model_name="Modèle de contrôle",
             reml=True,
-            model_name="Modèle cognitif",
         )
 
         # ==================================================================
-        # 4. Coefficients REML
+        # 5. Coefficients REML
         # ==================================================================
 
         fixed_effects = (
             create_fixed_effects_table(
-                cognitive_reml
+                control_reml
             )
         )
 
@@ -1446,99 +1353,24 @@ def main():
         )
 
         # ==================================================================
-        # 5. Statistiques d'ajustement
+        # 6. Comparaison ML
         # ==================================================================
 
-        fit_rows = [
-            create_model_statistics(
-                result=null_ml,
-                model_name="Null",
-                formula=NULL_FORMULA,
-                estimation="ML",
-                optimizer=null_optimizer,
-            ),
-            create_model_statistics(
-                result=control_ml,
-                model_name="Control",
-                formula=CONTROL_FORMULA,
-                estimation="ML",
-                optimizer=control_optimizer,
-            ),
-            create_model_statistics(
-                result=cognitive_ml,
-                model_name="Cognitive",
-                formula=COGNITIVE_FORMULA,
-                estimation="ML",
-                optimizer=
-                    cognitive_ml_optimizer,
-            ),
-            create_model_statistics(
-                result=cognitive_reml,
-                model_name="Cognitive",
-                formula=COGNITIVE_FORMULA,
-                estimation="REML",
-                optimizer=
-                    cognitive_reml_optimizer,
-            ),
-        ]
-
-        fit_statistics = pd.DataFrame(
-            fit_rows
-        )
-
-        fit_statistics.to_csv(
-            MODEL_FIT_STATISTICS_FILE,
-            index=False,
-        )
-
-        # ==================================================================
-        # 6. Tests du rapport de vraisemblance
-        # ==================================================================
-
-        null_vs_control = (
-            likelihood_ratio_test(
-                smaller_result=null_ml,
-                larger_result=control_ml,
+        model_comparison = (
+            compare_ml_models(
+                null_result=
+                    null_ml,
+                null_optimizer=
+                    null_optimizer,
+                control_result=
+                    control_ml,
+                control_optimizer=
+                    control_ml_optimizer,
             )
         )
 
-        control_vs_cognitive = (
-            likelihood_ratio_test(
-                smaller_result=control_ml,
-                larger_result=cognitive_ml,
-            )
-        )
-
-        null_vs_cognitive = (
-            likelihood_ratio_test(
-                smaller_result=null_ml,
-                larger_result=cognitive_ml,
-            )
-        )
-
-        likelihood_ratio_table = pd.DataFrame([
-            {
-                "comparison":
-                    "Null vs Control",
-
-                **null_vs_control,
-            },
-            {
-                "comparison":
-                    "Control vs Cognitive",
-
-                **control_vs_cognitive,
-            },
-            {
-                "comparison":
-                    "Null vs Cognitive",
-
-                **null_vs_cognitive,
-            },
-        ])
-
-        likelihood_ratio_table.to_csv(
-            LIKELIHOOD_RATIO_TESTS_FILE,
+        model_comparison.to_csv(
+            MODEL_COMPARISON_FILE,
             index=False,
         )
 
@@ -1547,13 +1379,13 @@ def main():
         # ==================================================================
 
         metrics = calculate_model_metrics(
-            cognitive_reml
+            control_reml
         )
 
         metrics_table = pd.DataFrame([
             {
                 "model":
-                    "Cognitive_REML",
+                    "Control_REML",
 
                 **metrics,
             }
@@ -1565,22 +1397,20 @@ def main():
         )
 
         # ==================================================================
-        # 8. Résumé complet
+        # 8. Résumé REML
         # ==================================================================
 
         save_reml_summary(
-            result=cognitive_reml,
+            result=control_reml,
             optimizer=
-                cognitive_reml_optimizer,
+                control_reml_optimizer,
             sequence_mean=
                 sequence_mean,
-            standardization_table=
-                standardization_table,
             metrics=metrics,
         )
 
         # ==================================================================
-        # 9. Affichage
+        # 9. Affichage des résultats
         # ==================================================================
 
         section(
@@ -1593,25 +1423,16 @@ def main():
         )
 
         section(
-            "COMPARAISON DES MODÈLES"
+            "COMPARAISON ML"
         )
 
         print(
-            fit_statistics
+            model_comparison
             .to_string(index=False)
         )
 
         section(
-            "TESTS DU RAPPORT DE VRAISEMBLANCE"
-        )
-
-        print(
-            likelihood_ratio_table
-            .to_string(index=False)
-        )
-
-        section(
-            "VARIANCES ET R² DU MODÈLE FINAL"
+            "VARIANCES ET R²"
         )
 
         print(
@@ -1626,8 +1447,7 @@ def main():
         for output_file in [
             REML_SUMMARY_FILE,
             FIXED_EFFECTS_FILE,
-            MODEL_FIT_STATISTICS_FILE,
-            LIKELIHOOD_RATIO_TESTS_FILE,
+            MODEL_COMPARISON_FILE,
             MODEL_METRICS_FILE,
         ]:
             print(
@@ -1636,7 +1456,7 @@ def main():
 
         print("")
         print("=" * 80)
-        print("MODÈLE COGNITIF TERMINÉ")
+        print("MODÈLE DE CONTRÔLE TERMINÉ")
         print("=" * 80)
 
     except (
