@@ -101,7 +101,7 @@ data_file <- file.path(
     project_root,
     "results",
     "tables",
-    "GAM",
+    "computational_model",
     "dataset_analysis_E1_n20.csv"
 )
 

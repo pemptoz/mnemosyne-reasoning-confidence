@@ -26,7 +26,7 @@ Nous avons ensuite utilisé un **GAM**, puis un véritable **GAMM**, afin de vé
 
 ---
 
-# 1. Justification du choix du GAM ?
+# 1. Justification du choix du GAM
 
 ## 1.1 Limite du modèle linéaire
 
@@ -902,7 +902,6 @@ Les résultats sont enregistrés dans [gamm_exploratory_E1_n20/](../../../result
 | gamm_exploratory_smooth_effects.csv | Valeurs numériques des courbes et intervalles à 95 % | Reproductibilité et analyse détaillée |
 | gamm_exploratory_variance_components.csv | Paramètres de lissage et écarts-types des effets aléatoires | Décomposition participant, item et résiduelle |
 | gamm_exploratory_k_check.csv | Vérification de la dimension des bases | Diagnostic de la flexibilité des splines |
-| gamm_exploratory_concurvity.csv | Dépendance entre les termes du modèle | Diagnostic d’identifiabilité |
 | gamm_exploratory_diagnostics.png | Distribution et structure des résidus | Vérification des hypothèses du modèle |
 
 Ajoute les sections suivantes **à la suite de la section 8 — `gam.vcomp()`**, sans remplacer le reste du README.
@@ -1015,7 +1014,7 @@ Les autres relations sont plus incertaines :
 - la validité n’est pas clairement associée à la confiance ;
 - la condition Standard présente une tendance positive.
 
-Les diagnostics n’indiquent pas que les valeurs de \(k\) sont insuffisantes. La concurvité montre néanmoins que les prédicteurs définis au niveau participant ou item sont difficilement séparables des effets aléatoires correspondants.
+Les diagnostics n’indiquent pas que les valeurs de \(k\) sont insuffisantes.
 
 ---
 
@@ -1045,7 +1044,7 @@ e_i=y_i-\widehat y_i.
 
 Si le modèle a correctement représenté la relation, deux observations proches sur l’axe du prédicteur ne devraient pas avoir des résidus systématiquement semblables.
 
-`k.check()` compare alors deux estimations de la variance résiduelle.
+`k.check()` compare alors deux estimations de la variance résiduelle. [documentation](https://rdrr.io/cran/mgcv/man/k.check.html)
 
 ### Variance résiduelle globale
 
