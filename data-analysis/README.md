@@ -69,6 +69,24 @@ Le premier est converti en dataset CCOBRA E1 et le second en deux
 datasets E2, correspondant aux phases intuitive et réfléchie.
 
 
+### Git LFS 
+
+Pour récupérer le cache utilisée pour accélérer les calculs, nous avons besoin de git LFS. Si ce dernier n'est pas installé sur votre machine, **avant de cloner le projet**, exécutez : 
+
+```bash
+sudo apt update
+sudo apt install git-lfs
+git lfs install
+```
+
+Ensuite, clonez le projet. 
+
+Si vous aviez déjà cloné le projet avant d'installer LFS, vous pouvez aussi récupérez le cache ainsi : 
+
+```bash
+git lfs pull
+``` 
+
 ## 3. Organisation du dépôt
 
 ```text
