@@ -106,6 +106,8 @@ git lfs pull
 │   │   ├── consensus/
 │   │   ├── entropy/ 
 │   │   └──  computational_model/
+│   │        ├── gam/
+│   │        └── linear-mixed-model/
 │   ├── benchmarks/             # Sorties des benchmarks
 │   ├── logs/                   # Paramètres ajustés par participant
 │   └── tables/                 # Résultats tabulaires
@@ -115,6 +117,8 @@ git lfs pull
     │   ├── consensus/          # Analyses de consensus
     │   ├── entropy/ 
     │   └── computational_models/       # Analyses d'entropie
+    │       ├── gam/ 
+    │       ├── linear-mixed-model/ 
     │       └── archive
     ├── models/
     │   ├── pymreasoner_conditional/
