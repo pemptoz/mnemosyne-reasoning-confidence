@@ -41,7 +41,7 @@ DATA_FILE = (
     PROJECT_ROOT
     / "results"
     / "tables"
-    / "gam"
+    / "computational-model"
     / "dataset_analysis_E1_n20.csv"
 )
 
