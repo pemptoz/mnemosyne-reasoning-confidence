@@ -91,9 +91,9 @@ Les résultats se trouvent ici : [gamm_exploratory_E1_n20](../../../../results/a
 
 Le modèle linéaire impose une relation de la forme :
 
-\[
-f(x)=\beta x.
-\]
+```math
+f(x)=\beta_x
+```
 
 Ce n’est pas forcément réaliste
 
